@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AI Engineer — Portfolio</title>
+  <meta
+    name="description"
+    content="AI-focused engineer building intelligent systems, automation workflows, AI agents, APIs, and business-oriented software."
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: [
+              "Inter",
+              "ui-sans-serif",
+              "system-ui",
+              "-apple-system",
+              "BlinkMacSystemFont",
+              "Segoe UI",
+              "sans-serif"
+            ]
+          },
+          animation: {
+            "fade-up": "fadeUp .7s ease-out forwards",
+            "float": "float 5s ease-in-out infinite"
+          },
+          keyframes: {
+            fadeUp: {
+              "0%": {
+                opacity: "0",
+                transform: "translateY(18px)"
+              },
+              "100%": {
+                opacity: "1",
+                transform: "translateY(0)"
+              }
+            },
+            float: {
+              "0%, 100%": {
+                transform: "translateY(0)"
+              },
+              "50%": {
+                transform: "translateY(-8px)"
+              }
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 80% 0%, rgba(99, 102, 241, 0.08), transparent 28rem),
+        radial-gradient(circle at 10% 20%, rgba(14, 165, 233, 0.06), transparent 25rem),
+        #fafafa;
+    }
+
+    .nav-link.active {
+      color: #111827;
+    }
+
+    .nav-link.active span {
+      width: 100%;
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .gradient-text {
+      background: linear-gradient(110deg, #111827, #4f46e5 55%, #0891b2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    ::selection {
+      background: #111827;
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="text-gray-900 antialiased">
+
+  <!-- NAVIGATION -->
+  <header
+    id="navbar"
+    class="fixed top-0 left-0 right-0 z-50 border-b border-gray-200/70 glass"
+  >
+    <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-6">
+
+      <a
+        href="#home"
+        class="text-sm font-semibold tracking-tight"
+      >
+        AI Engineer<span class="text-indigo-600">.</span>
+      </a>
+
+      <nav class="hidden items-center gap-7 md:flex">
+        <a href="#about" class="nav-link relative text-sm text-gray-500 transition hover:text-gray-900">
+          About
+          <span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span>
+        </a>
+
+        <a href="#work" class="nav-link relative text-sm text-gray-500 transition hover:text-gray-900">
+          Work
+          <span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span>
+        </a>
+
+        <a href="#skills" class="nav-link relative text-sm text-gray-500 transition hover:text-gray-900">
+          Skills
+          <span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span>
+        </a>
+
+        <a href="#approach" class="nav-link relative text-sm text-gray-500 transition hover:text-gray-900">
+          Approach
+          <span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span>
+        </a>
+
+        <a href="#contact" class="nav-link relative text-sm text-gray-500 transition hover:text-gray-900">
+          Contact
+          <span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span>
+        </a>
+      </nav>
+
+      <a
+        href="#contact"
+        class="hidden rounded-full bg-gray-900 px-4 py-2 text-xs font-medium text-white transition hover:bg-gray-700 md:block"
+      >
+        Let's connect
+      </a>
+
+      <button
+        id="menuButton"
+        aria-label="Open navigation"
+        class="rounded-lg p-2 text-gray-700 hover:bg-gray-100 md:hidden"
+      >
+        <svg
+          id="menuIcon"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div
+      id="mobileMenu"
+      class="hidden border-t border-gray-200/70 bg-white px-5 py-5 md:hidden"
+    >
+      <nav class="flex flex-col gap-4">
+        <a href="#about" class="mobile-link text-sm text-gray-600">About</a>
+        <a href="#work" class="mobile-link text-sm text-gray-600">Work</a>
+        <a href="#skills" class="mobile-link text-sm text-gray-600">Skills</a>
+        <a href="#approach" class="mobile-link text-sm text-gray-600">Approach</a>
+        <a href="#contact" class="mobile-link text-sm text-gray-600">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="home">
+
+    <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-5 pb-24 pt-36 sm:px-6 sm:pb-32 sm:pt-44">
+
+        <div class="max-w-4xl animate-fade-up">
+
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-600 shadow-sm">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+            AI Engineering · Automation · Systems
+          </div>
+
+          <h1 class="max-w-4xl text-5xl font-semibold leading-[1.03] tracking-[-0.045em] text-gray-950 sm:text-6xl md:text-7xl">
+            Building intelligent systems
+            <span class="gradient-text">for real-world problems.</span>
+          </h1>
+
+          <p class="mt-7 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg sm:leading-8">
+            I'm an AI-focused engineer interested in the intersection of
+            AI agents, automation, backend systems, APIs, and business operations.
+            I build systems that connect technology to practical business workflows.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#work"
+              class="inline-flex items-center justify-center rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-gray-700"
+            >
+              Explore my work
+              <svg class="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"
+                  d="M5 12h14m-6-6 6 6-6 6" />
+              </svg>
+            </a>
+
+            <a
+              href="#contact"
+              class="inline-flex items-center justify-center rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-medium text-gray-800 transition hover:-translate-y-0.5 hover:border-gray-400"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero metrics -->
+        <div class="mt-20 grid max-w-3xl grid-cols-2 gap-x-8 gap-y-8 border-t border-gray-200 pt-8 sm:grid-cols-4">
+
+          <div>
+            <p class="text-2xl font-semibold tracking-tight">AI</p>
+            <p class="mt-1 text-xs text-gray-500">Agents & LLM systems</p>
+          </div>
+
+          <div>
+            <p class="text-2xl font-semibold tracking-tight">APIs</p>
+            <p class="mt-1 text-xs text-gray-500">Integrations & webhooks</p>
+          </div>
+
+          <div>
+            <p class="text-2xl font-semibold tracking-tight">n8n</p>
+            <p class="mt-1 text-xs text-gray-500">Workflow automation</p>
+          </div>
+
+          <div>
+            <p class="text-2xl font-semibold tracking-tight">Full-stack</p>
+            <p class="mt-1 text-xs text-gray-500">Systems & products</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="border-t border-gray-200 bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="grid gap-14 lg:grid-cols-[0.7fr_1.3fr]">
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
+              About me
+            </p>
+
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              I'm building toward the intersection of AI and business.
+            </h2>
+          </div>
+
+          <div class="space-y-6 text-base leading-8 text-gray-600">
+
+            <p>
+              My background started with web development and backend systems.
+              Over time, I became increasingly interested in AI — not only using
+              AI tools, but understanding how AI agents can become part of larger
+              systems and actually perform useful work.
+            </p>
+
+            <p>
+              Today, my interests sit around AI agents, workflow automation,
+              APIs, backend systems, databases, conversational AI, and
+              business-process automation.
+            </p>
+
+            <p>
+              I enjoy working between the business and technical sides:
+              understanding a process, identifying what should be automated,
+              deciding where AI is genuinely useful, and then building the
+              system that connects everything together.
+            </p>
+
+            <div class="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+              <p class="text-sm font-medium text-gray-900">
+                A note on my experience
+              </p>
+
+              <p class="mt-2 text-sm leading-6 text-gray-600">
+                I'm deliberately honest about where I am. I have built and
+                experimented with AI and automation systems, but I have not yet
+                operated a large enterprise automation environment with real
+                business data. I'm looking for opportunities where I can take
+                the technical foundation I've built and apply it to real
+                production problems.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- WHAT I BUILD -->
+    <section id="work" class="bg-gray-50">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="max-w-2xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
+            What I build
+          </p>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Systems, not isolated AI demos.
+          </h2>
+
+          <p class="mt-5 text-base leading-7 text-gray-600">
+            I’m interested in systems where AI, automation, APIs, databases,
+            business logic and people work together.
+          </p>
+        </div>
+
+
+        <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+          <!-- Card -->
+          <article class="group rounded-2xl border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200/50">
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100 text-gray-900">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6 5.6 18.4" />
+              </svg>
+            </div>
+
+            <h3 class="mt-6 text-lg font-semibold">AI Agents</h3>
+
+            <p class="mt-3 text-sm leading-6 text-gray-600">
+              Conversational and task-oriented agents designed to interact
+              with systems and complete useful business tasks.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="badge">LLMs</span>
+              <span class="badge">Voice AI</span>
+              <span class="badge">Tool Calling</span>
+            </div>
+          </article>
+
+
+          <article class="group rounded-2xl border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200/50">
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M6 4v16M18 4v16M6 8h12M6 16h12" />
+              </svg>
+            </div>
+
+            <h3 class="mt-6 text-lg font-semibold">Workflow Automation</h3>
+
+            <p class="mt-3 text-sm leading-6 text-gray-600">
+              Business workflows combining triggers, APIs, AI, business rules,
+              notifications, data and human handoffs.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="badge">n8n</span>
+              <span class="badge">Webhooks</span>
+              <span class="badge">APIs</span>
+            </div>
+          </article>
+
+
+          <article class="group rounded-2xl border border-gray-200 bg-white p-7 transition duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg hover:shadow-gray-200/50">
+
+            <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gray-100">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"
+                  d="M4 7h16M4 12h16M4 17h10" />
+              </svg>
+            </div>
+
+            <h3 class="mt-6 text-lg font-semibold">Backend Systems</h3>
+
+            <p class="mt-3 text-sm leading-6 text-gray-600">
+              Data-driven applications, APIs, database logic, integrations,
+              authentication and production-oriented system architecture.
+            </p>
+
+            <div class="mt-6 flex flex-wrap gap-2">
+              <span class="badge">Node.js</span>
+              <span class="badge">Supabase</span>
+              <span class="badge">PostgreSQL</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="max-w-2xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
+            Selected work
+          </p>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Projects that shaped how I think.
+          </h2>
+        </div>
+
+
+        <div class="mt-12 space-y-5">
+
+          <!-- AI Voice -->
+          <article class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-50">
+
+            <div class="grid lg:grid-cols-[1fr_0.8fr]">
+
+              <div class="p-7 sm:p-10">
+
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="rounded-full bg-indigo-50 px-3 py-1 text-xs font-medium text-indigo-700">
+                    AI / Voice
+                  </span>
+
+                  <span class="rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-600">
+                    Exploration & development
+                  </span>
+                </div>
+
+                <h3 class="mt-6 text-2xl font-semibold tracking-tight">
+                  Egyptian Arabic AI Voice Agent
+                </h3>
+
+                <p class="mt-4 max-w-xl text-sm leading-7 text-gray-600">
+                  A production-oriented voice-agent architecture designed for
+                  Egyptian Arabic conversations and business use cases.
+                  The focus is not just speech generation, but the complete
+                  system around the agent.
+                </p>
+
+                <div class="mt-7 flex flex-wrap gap-2">
+                  <span class="badge">LiveKit</span>
+                  <span class="badge">Python</span>
+                  <span class="badge">Deepgram</span>
+                  <span class="badge">LLMs</span>
+                  <span class="badge">TTS</span>
+                  <span class="badge">Docker</span>
+                </div>
+
+              </div>
+
+              <div class="border-t border-gray-200 p-7 lg:border-l lg:border-t-0 sm:p-10">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                  What I learned
+                </p>
+
+                <ul class="mt-5 space-y-4 text-sm leading-6 text-gray-600">
+                  <li>• Latency matters as much as model quality.</li>
+                  <li>• Voice AI requires careful turn detection.</li>
+                  <li>• Cost and infrastructure matter at scale.</li>
+                  <li>• An agent needs business logic around the model.</li>
+                  <li>• Observability is essential for production systems.</li>
+                </ul>
+
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- V League -->
+          <article class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-50">
+
+            <div class="grid lg:grid-cols-[0.8fr_1fr]">
+
+              <div class="order-2 border-t border-gray-200 p-7 lg:order-1 lg:border-r lg:border-t-0 sm:p-10">
+
+                <p class="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                  Stack
+                </p>
+
+                <div class="mt-5 flex flex-wrap gap-2">
+                  <span class="badge">SvelteKit</span>
+                  <span class="badge">Supabase</span>
+                  <span class="badge">PostgreSQL</span>
+                  <span class="badge">Paymob</span>
+                  <span class="badge">Authentication</span>
+                </div>
+
+              </div>
+
+              <div class="order-1 p-7 lg:order-2 sm:p-10">
+
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-700">
+                    Full-stack
+                  </span>
+
+                  <span class="rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-600">
+                    Production-oriented
+                  </span>
+                </div>
+
+                <h3 class="mt-6 text-2xl font-semibold tracking-tight">
+                  V League Sports Platform
+                </h3>
+
+                <p class="mt-4 max-w-xl text-sm leading-7 text-gray-600">
+                  A sports league platform where I worked beyond a simple
+                  static website and developed production-oriented application
+                  logic around authentication, payments, scoring, rankings,
+                  standings and event data.
+                </p>
+
+                <div class="mt-7 rounded-2xl border border-gray-200 bg-white p-5">
+
+                  <p class="text-sm font-medium text-gray-900">
+                    Scoring & ranking engine
+                  </p>
+
+                  <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Event attempts and results are transformed into calculated
+                    performances, rankings, points and standings through
+                    database-driven business logic.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+
+          <!-- Aura -->
+          <article class="overflow-hidden rounded-3xl border border-gray-200 bg-gray-50">
+
+            <div class="p-7 sm:p-10">
+
+              <div class="flex flex-wrap items-center gap-2">
+                <span class="rounded-full bg-amber-50 px-3 py-1 text-xs font-medium text-amber-700">
+                  Product
+                </span>
+
+                <span class="rounded-full bg-white px-3 py-1 text-xs font-medium text-gray-600">
+                  Product exploration
+                </span>
+              </div>
+
+              <div class="grid gap-10 lg:grid-cols-[1fr_0.8fr]">
+
+                <div>
+
+                  <h3 class="mt-6 text-2xl font-semibold tracking-tight">
+                    Aura — Local Discovery & Commerce
+                  </h3>
+
+                  <p class="mt-4 max-w-2xl text-sm leading-7 text-gray-600">
+                    A product concept exploring how local discovery,
+                    offers, transactions, loyalty, cashback, delivery and
+                    AI employees could work together in one platform.
+                  </p>
+
+                  <div class="mt-7 flex flex-wrap gap-2">
+                    <span class="badge">Marketplace</span>
+                    <span class="badge">Payments</span>
+                    <span class="badge">Loyalty</span>
+                    <span class="badge">AI</span>
+                    <span class="badge">Delivery</span>
+                  </div>
+
+                </div>
+
+                <div class="rounded-2xl border border-gray-200 bg-white p-6">
+
+                  <p class="text-xs font-semibold uppercase tracking-[0.15em] text-gray-400">
+                    Core loop
+                  </p>
+
+                  <p class="mt-4 text-sm font-medium text-gray-900">
+                    Discover → Evaluate → Act → Transact → Reward → Return
+                  </p>
+
+                  <p class="mt-4 text-sm leading-6 text-gray-600">
+                    The project pushed me to think about product economics,
+                    incentives, transaction flows and validation before
+                    committing to implementation.
+                  </p>
+
+                </div>
+
+              </div>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- AUTOMATION -->
+    <section class="bg-gray-950 text-white">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="max-w-3xl">
+
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
+            Automation mindset
+          </p>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            AI should solve the process,
+            not just generate the response.
+          </h2>
+
+          <p class="mt-5 text-base leading-7 text-gray-400">
+            When I design an automation, I think about the entire lifecycle:
+            trigger, data, decision, action, human handoff, failure handling
+            and measurement.
+          </p>
+
+        </div>
+
+
+        <div class="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+            <span class="text-xs text-gray-500">01</span>
+            <h3 class="mt-5 font-semibold">Understand</h3>
+            <p class="mt-3 text-sm leading-6 text-gray-400">
+              Understand the real business process before deciding what to automate.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+            <span class="text-xs text-gray-500">02</span>
+            <h3 class="mt-5 font-semibold">Separate</h3>
+            <p class="mt-3 text-sm leading-6 text-gray-400">
+              Separate deterministic tasks from tasks that genuinely require AI.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+            <span class="text-xs text-gray-500">03</span>
+            <h3 class="mt-5 font-semibold">Build</h3>
+            <p class="mt-3 text-sm leading-6 text-gray-400">
+              Connect APIs, workflows, agents, databases and business rules.
+            </p>
+          </div>
+
+          <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-6">
+            <span class="text-xs text-gray-500">04</span>
+            <h3 class="mt-5 font-semibold">Improve</h3>
+            <p class="mt-3 text-sm leading-6 text-gray-400">
+              Monitor results, handle failures and continuously improve the system.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- AUTOMATION EXAMPLES -->
+    <section id="approach" class="bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="grid gap-14 lg:grid-cols-[0.65fr_1.35fr]">
+
+          <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
+              Business automation
+            </p>
+
+            <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+              Where I see AI creating real operational value.
+            </h2>
+
+            <p class="mt-5 text-sm leading-7 text-gray-600">
+              These are the kinds of workflows I am particularly interested
+              in building for real businesses.
+            </p>
+          </div>
+
+
+          <div class="space-y-4">
+
+            <article class="rounded-2xl border border-gray-200 p-6 transition hover:border-gray-300">
+              <div class="flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="font-semibold">AI Lead Qualification</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Capture a lead, extract requirements, qualify intent,
+                    update the CRM and route the lead to the right salesperson.
+                  </p>
+                </div>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
+                  Sales
+                </span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-gray-200 p-6 transition hover:border-gray-300">
+              <div class="flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="font-semibold">AI Follow-Up Engine</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Adapt follow-up based on customer intent, lifecycle stage,
+                    previous interaction and response behavior.
+                  </p>
+                </div>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
+                  CRM
+                </span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-gray-200 p-6 transition hover:border-gray-300">
+              <div class="flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="font-semibold">Salesperson Copilot</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Summarize customer conversations, extract requirements,
+                    identify objections and suggest the next action.
+                  </p>
+                </div>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
+                  AI
+                </span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-gray-200 p-6 transition hover:border-gray-300">
+              <div class="flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="font-semibold">No Lead Left Behind</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Detect unattended, overdue or high-priority leads and
+                    automatically notify or escalate them.
+                  </p>
+                </div>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
+                  Operations
+                </span>
+              </div>
+            </article>
+
+            <article class="rounded-2xl border border-gray-200 p-6 transition hover:border-gray-300">
+              <div class="flex items-start justify-between gap-5">
+                <div>
+                  <h3 class="font-semibold">AI Management Reporting</h3>
+                  <p class="mt-2 text-sm leading-6 text-gray-600">
+                    Transform CRM and sales data into recurring operational
+                    summaries, anomalies and useful management insights.
+                  </p>
+                </div>
+                <span class="rounded-full bg-gray-100 px-2.5 py-1 text-xs text-gray-500">
+                  Analytics
+                </span>
+              </div>
+            </article>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills" class="bg-gray-50">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="max-w-2xl">
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
+            Technical foundation
+          </p>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            Tools are important. Understanding the system is more important.
+          </h2>
+        </div>
+
+
+        <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 class="font-semibold">AI</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="badge">LLMs</span>
+              <span class="badge">AI Agents</span>
+              <span class="badge">Prompt Design</span>
+              <span class="badge">Voice AI</span>
+              <span class="badge">TTS</span>
+              <span class="badge">STT</span>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 class="font-semibold">Automation</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="badge">n8n</span>
+              <span class="badge">Webhooks</span>
+              <span class="badge">APIs</span>
+              <span class="badge">Workflow Logic</span>
+              <span class="badge">Integrations</span>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 class="font-semibold">Development</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="badge">JavaScript</span>
+              <span class="badge">Node.js</span>
+              <span class="badge">Express</span>
+              <span class="badge">SvelteKit</span>
+              <span class="badge">REST</span>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-gray-200 bg-white p-6">
+            <h3 class="font-semibold">Data & Infrastructure</h3>
+            <div class="mt-5 flex flex-wrap gap-2">
+              <span class="badge">PostgreSQL</span>
+              <span class="badge">Supabase</span>
+              <span class="badge">Docker</span>
+              <span class="badge">Authentication</span>
+              <span class="badge">Payments</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- HONEST DEVELOPMENT -->
+    <section class="bg-white">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="mx-auto max-w-3xl text-center">
+
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-600">
+            Where I'm going
+          </p>
+
+          <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+            I'm still building the experience.
+          </h2>
+
+          <p class="mt-6 text-base leading-8 text-gray-600">
+            I don't claim to have finished the journey. My professional
+            experience with large-scale enterprise automation, Odoo and
+            long-running production workflows is still developing.
+          </p>
+
+          <p class="mt-5 text-base leading-8 text-gray-600">
+            What I already have is the technical foundation: AI agents,
+            APIs, webhooks, backend systems, databases, integrations,
+            business logic and product thinking.
+          </p>
+
+          <p class="mt-5 text-base leading-8 text-gray-600">
+            I'm looking for the opportunity to take that foundation into
+            real production environments, work with experienced teams,
+            learn from real operational data and take ownership of larger
+            AI-powered systems.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="bg-gray-950 text-white">
+      <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+
+        <div class="max-w-3xl">
+
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-indigo-300">
+            Let's connect
+          </p>
+
+          <h2 class="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">
+            Let's build something useful.
+          </h2>
+
+          <p class="mt-6 max-w-2xl text-base leading-7 text-gray-400">
+            I'm interested in opportunities involving AI engineering,
+            automation, intelligent business systems, AI agents and
+            backend integrations.
+          </p>
+
+          <div class="mt-9 flex flex-col gap-3 sm:flex-row">
+
+            <a
+              href="mailto:your.email@example.com"
+              class="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-sm font-medium text-gray-900 transition hover:bg-gray-200"
+            >
+              Email me
+            </a>
+
+            <a
+              href="#home"
+              class="inline-flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10"
+            >
+              Back to top
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/10 bg-gray-950 text-gray-500">
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-xs sm:flex-row sm:items-center sm:justify-between sm:px-6">
+
+      <p>
+        Built with curiosity, engineering, and AI.
+      </p>
+
+      <p>
+        © <span id="year"></span>
+      </p>
+
+    </div>
+  </footer>
+
+
+  <script>
+    // -------------------------------------------------------
+    // Badge styling
+    // -------------------------------------------------------
+
+    document.querySelectorAll(".badge").forEach((badge) => {
+      badge.className =
+        "badge rounded-full bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-600";
+    });
+
+
+    // -------------------------------------------------------
+    // Mobile navigation
+    // -------------------------------------------------------
+
+    const menuButton = document.getElementById("menuButton");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuButton.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll(".mobile-link").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
+    });
+
+
+    // -------------------------------------------------------
+    // Active navigation based on scroll position
+    // -------------------------------------------------------
+
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    const updateActiveNavigation = () => {
+      let current = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 140;
+
+        if (window.scrollY >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", updateActiveNavigation);
+    updateActiveNavigation();
+
+
+    // -------------------------------------------------------
+    // Current year
+    // -------------------------------------------------------
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // -------------------------------------------------------
+    // Small reveal animation
+    // -------------------------------------------------------
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-up");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08
+      }
+    );
+
+    document
+      .querySelectorAll("article, section > div > div")
+      .forEach((element) => {
+        element.style.opacity = "0";
+        observer.observe(element);
+      });
+  </script>
+
+</body>
+</html>
