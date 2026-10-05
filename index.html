@@ -1,1017 +1,1051 @@
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Software Engineer and AI Systems Builder. Building full-stack applications, intelligent systems, APIs and business-oriented software.">
-<title>Portfolio — Software & AI Engineering</title>
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="Software Engineer and AI Systems Builder. Building full-stack applications, intelligent systems, APIs and business-oriented software.">
+ <title>Portfolio — Software & AI Engineering</title>
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+   theme: {
+     extend: {
+       fontFamily: {
+         sans: ['Inter','system-ui','-apple-system','sans-serif']
+       },
+       colors: {
+         ink: '#15171C',
+         muted: '#737783',
+         accent: '#5556D9'
+       }
+     }
+   }
+ }
+ </script>
+ <style>
+ html { scroll-behavior:smooth; scroll-padding-top:90px; }
+ body {
+   background:#fafafa;
+   color:#15171c;
+ }
+ ::selection { background:#5556d9;color:white; }
+ .glass {
+   background:rgba(250,250,250,.88);
+   backdrop-filter:blur(16px);
+ }
+ .gradient-text {
+   background:linear-gradient(110deg,#171923,#5556d9 65%,#0891b2);
+   -webkit-background-clip:text;
+   background-clip:text;
+   color:transparent;
+ }
+ .nav-link.active {color:#15171c;}
+ .nav-link.active span {width:100%;}
+ .reveal {
+   opacity:0;
+   transform:translateY(18px);
+   transition:opacity .7s ease,transform .7s ease;
+ }
+ .reveal.visible {
+   opacity:1;
+   transform:translateY(0);
+ }
+ .badge {
+   display:inline-flex;
+   align-items:center;
+   border:1px solid #e5e7eb;
+   background:white;
+   border-radius:999px;
+   padding:5px 11px;
+   font-size:11px;
+   color:#555963;
+   font-weight:500;
+ }
+ .project-card {
+   transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+ }
+ .project-card:hover {
+   transform:translateY(-3px);
+   border-color:#cbd0dc;
+   box-shadow:0 15px 35px rgba(0,0,0,.035);
+ }
+ .section-label {
+   font-size:11px;
+   letter-spacing:.18em;
+   text-transform:uppercase;
+   font-weight:650;
+   color:#5556d9;
+ }
+ 
+/* ===== Premium visual layer ===== */
+:root{
+  --accent:#6366f1;
+  --accent-2:#06b6d4;
+  --ink:#0f1117;
+  --line:rgba(15,17,23,.09);
+  --shadow:0 24px 80px rgba(15,17,23,.10);
+}
+body{overflow-x:hidden;background:#f7f7f9}
+body::before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;
+  background-image:linear-gradient(rgba(99,102,241,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(99,102,241,.035) 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:linear-gradient(to bottom,black,transparent 72%);
+}
+body::after{
+  content:"";position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:60;
+  left:var(--mx,-300px);top:var(--my,-300px);transform:translate(-50%,-50%);
+  background:radial-gradient(circle,rgba(99,102,241,.09),transparent 65%);
+  transition:left .18s ease-out,top .18s ease-out;
+}
+.glass{background:rgba(250,250,252,.72)!important;border-color:rgba(15,17,23,.08)!important}
+.hero-grid{position:relative}
+.hero-grid::before{
+  content:"";position:absolute;width:650px;height:650px;right:-260px;top:-260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(99,102,241,.18),rgba(6,182,212,.07) 38%,transparent 68%);
+  filter:blur(8px);pointer-events:none;animation:aurora 10s ease-in-out infinite alternate;
+}
+@keyframes aurora{to{transform:translate(-30px,30px) scale(1.08);opacity:.75}}
+.gradient-text{background:linear-gradient(105deg,#111827 5%,#6366f1 48%,#06b6d4 92%)!important;background-size:180% auto;animation:gradientShift 7s ease infinite}
+@keyframes gradientShift{50%{background-position:100% 50%}}
+.reveal{will-change:transform,opacity}
+.reveal.visible{transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.project-card{position:relative;isolation:isolate;overflow:hidden}
+.project-card::before{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:0;
+  background:radial-gradient(420px circle at var(--card-x,50%) var(--card-y,0%),rgba(99,102,241,.10),transparent 60%);
+  transition:opacity .35s ease;
+}
+.project-card:hover::before{opacity:1}
+.project-card:hover{transform:translateY(-7px)!important;box-shadow:0 28px 70px rgba(15,17,23,.09)!important}
+.badge{transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.badge:hover{transform:translateY(-2px);background:#f5f5ff;border-color:#c7d2fe}
+.scroll-progress{
+  position:fixed;left:0;top:0;height:2px;width:0;z-index:100;background:linear-gradient(90deg,#6366f1,#06b6d4);
+  box-shadow:0 0 14px rgba(99,102,241,.55)
+}
+.hero-visual{
+  position:relative;min-height:420px;display:grid;place-items:center;
+  perspective:1200px;
+}
+.system-card{
+  position:relative;width:min(100%,430px);aspect-ratio:1/1;border:1px solid rgba(255,255,255,.14);
+  border-radius:32px;background:linear-gradient(145deg,#11131a,#1c2030);
+  box-shadow:0 35px 100px rgba(15,17,23,.28);overflow:hidden;
+  transform:rotateX(4deg) rotateY(-7deg);transition:transform .35s ease,box-shadow .35s ease;
+}
+.system-card:hover{transform:rotateX(0) rotateY(0) translateY(-8px);box-shadow:0 45px 120px rgba(15,17,23,.34)}
+.system-card::before{
+  content:"";position:absolute;inset:-40%;background:conic-gradient(from 120deg,transparent,#6366f1,transparent 25%,#06b6d4,transparent 55%);
+  animation:spin 12s linear infinite;opacity:.16;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.system-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:34px 34px}
+.node{
+  position:absolute;display:flex;align-items:center;gap:9px;padding:9px 12px;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.055);backdrop-filter:blur(10px);border-radius:14px;color:#e5e7eb;font-size:11px;
+  box-shadow:0 10px 30px rgba(0,0,0,.16);animation:float 4s ease-in-out infinite;
+}
+.node b{font-size:10px;color:#fff}.node span{color:#9ca3af}
+.node::before{content:"";width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 14px #22c55e}
+.node:nth-child(2){animation-delay:-1s}.node:nth-child(3){animation-delay:-2s}.node:nth-child(4){animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-8px)}}
+.node-a{left:8%;top:19%}.node-b{right:8%;top:30%}.node-c{left:13%;bottom:25%}.node-d{right:10%;bottom:18%}
+.core{
+  position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:128px;height:128px;border-radius:50%;
+  display:grid;place-items:center;text-align:center;color:white;font-size:11px;font-weight:700;
+  background:radial-gradient(circle at 35% 25%,#818cf8,#4338ca 45%,#111827 70%);
+  box-shadow:0 0 0 1px rgba(255,255,255,.15),0 0 80px rgba(99,102,241,.35);
+}
+.core::after{content:"";position:absolute;inset:-18px;border:1px solid rgba(129,140,248,.28);border-radius:50%;animation:ring 3s ease-out infinite}
+@keyframes ring{0%{transform:scale(.75);opacity:.8}100%{transform:scale(1.3);opacity:0}}
+.connector{position:absolute;height:1px;background:linear-gradient(90deg,rgba(99,102,241,0),rgba(129,140,248,.65),rgba(6,182,212,0));transform-origin:left center;opacity:.65}
+.c1{width:155px;left:26%;top:34%;transform:rotate(17deg)}.c2{width:145px;left:52%;top:39%;transform:rotate(-16deg)}
+.c3{width:160px;left:29%;top:62%;transform:rotate(-18deg)}.c4{width:150px;left:51%;top:62%;transform:rotate(16deg)}
+.visual-label{
+  position:absolute;left:24px;top:22px;z-index:3;font:600 10px/1 system-ui;letter-spacing:.16em;text-transform:uppercase;color:#94a3b8
+}
+.visual-status{
+  position:absolute;right:22px;top:18px;z-index:3;display:flex;align-items:center;gap:6px;color:#a7f3d0;font-size:10px
+}
+.visual-status i{width:6px;height:6px;background:#34d399;border-radius:50%;box-shadow:0 0 10px #34d399}
+.mini-metric{
+  position:absolute;left:24px;right:24px;bottom:22px;z-index:3;display:grid;grid-template-columns:repeat(3,1fr);gap:8px
+}
+.mini-metric div{padding:10px;border-radius:12px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08)}
+.mini-metric strong{display:block;color:#fff;font-size:14px}.mini-metric span{display:block;color:#64748b;font-size:9px;margin-top:3px}
+.section-visual{
+  border-radius:24px;border:1px solid #e5e7eb;background:linear-gradient(135deg,#f8faff,#eef2ff);
+  overflow:hidden;min-height:180px;position:relative;
+}
+.section-visual .bar{position:absolute;height:8px;border-radius:999px;background:linear-gradient(90deg,#6366f1,#06b6d4);opacity:.8}
+.section-visual .dot{position:absolute;width:11px;height:11px;border-radius:50%;background:#6366f1;box-shadow:0 0 20px rgba(99,102,241,.5);animation:pulseDot 2s infinite}
+@keyframes pulseDot{50%{transform:scale(1.5);opacity:.5}}
+.project-visual{margin:-1px -1px 0;border-bottom:1px solid #e5e7eb}
+.project-visual.dark{background:#0f1117;border-color:rgba(255,255,255,.08)}
+.tilt{transform-style:preserve-3d}
+.nav-link span{transition:width .25s ease}
+.nav-link.active{font-weight:600}
+@media (max-width:767px){.hero-visual{min-height:350px;margin-top:12px}.system-card{width:100%;transform:none}.hero-grid::before{right:-420px}.node{font-size:9px}.node span{display:none}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+  .reveal{opacity:1!important;transform:none!important}
+}
 
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
-      },
-      colors: {
-        ink: '#15171C',
-        muted: '#737783',
-        accent: '#5556D9'
-      }
-    }
-  }
-}
-</script>
-
-<style>
-html { scroll-behavior:smooth; scroll-padding-top:90px; }
-body {
-  background:#fafafa;
-  color:#15171c;
-}
-::selection { background:#5556d9;color:white; }
-.glass {
-  background:rgba(250,250,250,.88);
-  backdrop-filter:blur(16px);
-}
-.gradient-text {
-  background:linear-gradient(110deg,#171923,#5556d9 65%,#0891b2);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-.nav-link.active {color:#15171c;}
-.nav-link.active span {width:100%;}
-.reveal {
-  opacity:0;
-  transform:translateY(18px);
-  transition:opacity .7s ease,transform .7s ease;
-}
-.reveal.visible {
-  opacity:1;
-  transform:translateY(0);
-}
-.badge {
-  display:inline-flex;
-  align-items:center;
-  border:1px solid #e5e7eb;
-  background:white;
-  border-radius:999px;
-  padding:5px 11px;
-  font-size:11px;
-  color:#555963;
-  font-weight:500;
-}
-.project-card {
-  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
-}
-.project-card:hover {
-  transform:translateY(-3px);
-  border-color:#cbd0dc;
-  box-shadow:0 15px 35px rgba(0,0,0,.035);
-}
-.section-label {
-  font-size:11px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  font-weight:650;
-  color:#5556d9;
-}
 </style>
-</head>
-
-<body class="antialiased">
-
-<!-- NAVIGATION -->
-<header class="fixed top-0 z-50 w-full border-b border-gray-200/70 glass">
-  <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-6">
-
-    <a href="#home" class="font-semibold tracking-tight">
-      Software & AI<span class="text-indigo-600">.</span>
-    </a>
-
-    <nav class="hidden items-center gap-7 md:flex">
-      <a href="#about" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">About<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
-      <a href="#expertise" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Expertise<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
-      <a href="#projects" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Projects<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
-      <a href="#engineering" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Engineering<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
-      <a href="#contact" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Contact<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
-    </nav>
-
-    <a href="#contact" class="hidden rounded-full bg-gray-900 px-5 py-2.5 text-xs font-medium text-white hover:bg-gray-700 md:block">Let's connect</a>
-
-    <button id="menuButton" class="rounded-lg p-2 hover:bg-gray-100 md:hidden" aria-label="Toggle navigation">
-      <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-width="1.8" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
-
-  <nav id="mobileMenu" class="hidden border-t border-gray-200 bg-white px-6 py-5 md:hidden">
-    <div class="flex flex-col gap-4 text-sm text-gray-600">
-      <a href="#about">About</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projects">Projects</a>
-      <a href="#engineering">Engineering</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-</header>
-
-
-<main id="home">
-
-<!-- HERO -->
-<section class="overflow-hidden">
-  <div class="mx-auto max-w-6xl px-5 pb-24 pt-36 sm:px-6 sm:pb-32 sm:pt-44">
-
-    <div class="reveal max-w-4xl">
-      <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-600">
-        <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
-        Software Development · AI Engineering · Systems
-      </div>
-
-      <h1 class="text-5xl font-semibold leading-[1.04] tracking-[-.045em] sm:text-6xl md:text-7xl">
-        Building software,<br>
-        <span class="gradient-text">intelligent systems</span><br>
-        and meaningful products.
-      </h1>
-
-      <p class="mt-8 max-w-2xl text-base leading-8 text-gray-600 sm:text-lg">
-        I'm a software developer and AI-focused engineer interested in
-        building complete systems — from frontend experiences and backend
-        architecture to databases, integrations, automation and AI agents.
-        I enjoy turning complex ideas and business requirements into
-        practical, working software.
-      </p>
-
-      <div class="mt-9 flex flex-wrap gap-3">
-        <a href="#projects" class="rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-gray-700">
-          Explore my projects →
-        </a>
-        <a href="#contact" class="rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-medium transition hover:border-gray-500">
-          Get in touch
-        </a>
-      </div>
-    </div>
-
-    <div class="mt-20 grid max-w-4xl grid-cols-2 gap-8 border-t border-gray-200 pt-8 sm:grid-cols-4">
-      <div><p class="text-lg font-semibold">Full-stack</p><p class="mt-1 text-xs text-gray-500">Application development</p></div>
-      <div><p class="text-lg font-semibold">Backend</p><p class="mt-1 text-xs text-gray-500">Data & system logic</p></div>
-      <div><p class="text-lg font-semibold">AI Systems</p><p class="mt-1 text-xs text-gray-500">Agents & intelligent workflows</p></div>
-      <div><p class="text-lg font-semibold">Product</p><p class="mt-1 text-xs text-gray-500">Architecture & business thinking</p></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ABOUT -->
-<section id="about" class="border-t border-gray-200 bg-white">
-  <div class="mx-auto grid max-w-6xl gap-14 px-5 py-24 sm:px-6 sm:py-32 lg:grid-cols-[.7fr_1.3fr]">
-
-    <div class="reveal">
-      <p class="section-label">01 / About me</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-        More than just AI. I build the systems behind it.
-      </h2>
-    </div>
-
-    <div class="reveal space-y-6 text-base leading-8 text-gray-600">
-      <p>
-        My journey started with software and web development. I became
-        interested in understanding how applications actually work:
-        how the frontend communicates with the backend, how databases
-        organize information, how APIs connect services, and how business
-        rules translate into working software.
-      </p>
-
-      <p>
-        Over time, my interests expanded into more complex systems,
-        product architecture and AI engineering. I started exploring
-        how AI could become part of applications and perform useful
-        tasks through tools, APIs, databases and automated workflows.
-      </p>
-
-      <p>
-        Today, I work across software development, backend engineering,
-        database design, integrations, AI agents and automation.
-        I don't see these as separate disciplines. They are different
-        parts of building a complete solution.
-      </p>
-
-      <p>
-        I particularly enjoy understanding a problem from both the
-        technical and business perspectives, then breaking it down
-        into components that can be designed, implemented and improved.
-      </p>
-
-      <div class="rounded-2xl border border-gray-200 bg-gray-50 p-6">
-        <p class="font-semibold text-gray-900">A note about my experience</p>
-        <p class="mt-2 text-sm leading-7 text-gray-600">
-          I'm intentional about representing my experience accurately.
-          Some of my work involves implemented software systems, while
-          other projects are in development or product-design stages.
-          I don't claim large-scale enterprise automation experience
-          or present concepts as launched products. I'm continuously
-          developing my engineering skills through practical work.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- EXPERTISE -->
-<section id="expertise" class="bg-gray-50">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-
-    <div class="reveal max-w-2xl">
-      <p class="section-label">02 / Technical expertise</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">The different layers I work with.</h2>
-      <p class="mt-5 leading-7 text-gray-600">
-        My technical interests extend from application interfaces
-        to databases, integrations and intelligent systems.
-      </p>
-    </div>
-
-    <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-
-      <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
-        <div class="text-xs font-semibold text-indigo-600">01 / FRONTEND</div>
-        <h3 class="mt-5 text-xl font-semibold">Web Development</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Building responsive application interfaces, reusable components,
-          page structures and user experiences connected to backend services.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">HTML</span><span class="badge">CSS</span>
-          <span class="badge">JavaScript</span><span class="badge">SvelteKit</span>
-          <span class="badge">Tailwind CSS</span>
-        </div>
-      </article>
-
-      <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
-        <div class="text-xs font-semibold text-indigo-600">02 / BACKEND</div>
-        <h3 class="mt-5 text-xl font-semibold">Backend Engineering</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Designing application logic, REST endpoints, server-side
-          operations, authentication flows and integrations between systems.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">Node.js</span><span class="badge">Express</span>
-          <span class="badge">REST APIs</span><span class="badge">JavaScript</span>
-          <span class="badge">Authentication</span>
-        </div>
-      </article>
-
-      <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
-        <div class="text-xs font-semibold text-indigo-600">03 / DATABASES</div>
-        <h3 class="mt-5 text-xl font-semibold">Data & Database Systems</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Working with relational data, schema design, queries,
-          database functions, constraints, business logic and data consistency.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">PostgreSQL</span><span class="badge">MySQL</span>
-          <span class="badge">Supabase</span><span class="badge">SQL</span>
-          <span class="badge">Database Functions</span>
-        </div>
-      </article>
-
-      <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
-        <div class="text-xs font-semibold text-indigo-600">04 / INTEGRATIONS</div>
-        <h3 class="mt-5 text-xl font-semibold">APIs & Integrations</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Connecting applications and external services, handling
-          data exchange, authentication, payment services and webhooks.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">REST</span><span class="badge">Webhooks</span>
-          <span class="badge">JSON</span><span class="badge">Paymob</span>
-          <span class="badge">Third-party APIs</span>
-        </div>
-      </article>
-
-      <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
-        <div class="text-xs font-semibold text-indigo-600">05 / AI ENGINEERING</div>
-        <h3 class="mt-5 text-xl font-semibold">AI & Intelligent Systems</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Exploring LLM applications, agent architectures,
-          conversational systems, voice pipelines and AI-powered tools.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">LLMs</span><span class="badge">AI Agents</span>
-          <span class="badge">LiveKit</span><span class="badge">Deepgram</span>
-          <span class="badge">Python</span>
-        </div>
-      </article>
-
-      <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
-        <div class="text-xs font-semibold text-indigo-600">06 / AUTOMATION</div>
-        <h3 class="mt-5 text-xl font-semibold">Workflow Automation</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Designing workflows around triggers, integrations,
-          data processing, AI decisions, business rules and human handoffs.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">n8n</span><span class="badge">APIs</span>
-          <span class="badge">Webhooks</span><span class="badge">AI Workflows</span>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- PROJECTS -->
-<section id="projects" class="bg-white">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-
-    <div class="reveal max-w-2xl">
-      <p class="section-label">03 / Selected projects</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">A closer look at what I've worked on.</h2>
-      <p class="mt-5 leading-7 text-gray-600">
-        Different projects, different challenges — from application
-        engineering and database logic to AI infrastructure and product strategy.
-      </p>
-    </div>
-
-
-    <!-- V LEAGUE -->
-    <article class="reveal project-card mt-14 overflow-hidden rounded-3xl border border-gray-200">
-
-      <div class="grid lg:grid-cols-[1.15fr_.85fr]">
-
-        <div class="p-7 sm:p-10">
-          <div class="flex flex-wrap gap-2">
-            <span class="badge">Full-stack development</span>
-            <span class="badge">Sports technology</span>
-            <span class="badge">Implemented work</span>
-          </div>
-
-          <h3 class="mt-7 text-3xl font-semibold tracking-tight">V League</h3>
-          <p class="mt-2 text-sm font-medium text-gray-500">Sports League Platform</p>
-
-          <p class="mt-6 text-sm leading-7 text-gray-600">
-            One of my most practical software development experiences.
-            I worked on transforming a relatively simple static website
-            into a much more complete, production-oriented sports league
-            application.
-          </p>
-
-          <p class="mt-4 text-sm leading-7 text-gray-600">
-            The challenge was not simply building pages. The platform
-            needed structured data, user authentication, event management,
-            performance calculations, athlete rankings, points and
-            standings. This required implementing the application logic
-            and database structure behind the experience.
-          </p>
-
-          <h4 class="mt-8 text-sm font-semibold">What I worked on</h4>
-
-          <ul class="mt-4 space-y-3 text-sm leading-6 text-gray-600">
-            <li>• Developing the application using SvelteKit and JavaScript.</li>
-            <li>• Using Supabase for authentication, PostgreSQL and backend data services.</li>
-            <li>• Structuring relational data for athletes, clubs, events and results.</li>
-            <li>• Developing scoring and ranking calculation logic.</li>
-            <li>• Integrating Paymob payment functionality.</li>
-            <li>• Designing database-driven standings and statistics.</li>
-          </ul>
-
-        </div>
-
-        <div class="border-t border-gray-200 bg-gray-50 p-7 sm:p-10 lg:border-l lg:border-t-0">
-
-          <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Technical implementation</h4>
-
-          <div class="mt-6 space-y-6">
-
-            <div>
-              <p class="font-semibold text-sm">Frontend — SvelteKit</p>
-              <p class="mt-2 text-sm leading-6 text-gray-600">
-                Application pages, reusable components, routing
-                and interactions using JavaScript.
-              </p>
-            </div>
-
-            <div>
-              <p class="font-semibold text-sm">Backend — Supabase</p>
-              <p class="mt-2 text-sm leading-6 text-gray-600">
-                Authentication, PostgreSQL data management,
-                SQL functions and database-driven operations.
-              </p>
-            </div>
-
-            <div>
-              <p class="font-semibold text-sm">Scoring & Ranking Engine</p>
-              <p class="mt-2 text-sm leading-6 text-gray-600">
-                Best-performance calculations, ranking generation,
-                points allocation and standings refresh.
-              </p>
-            </div>
-
-            <div>
-              <p class="font-semibold text-sm">Database Optimization</p>
-              <p class="mt-2 text-sm leading-6 text-gray-600">
-                Designed materialized views for individual standings
-                and event statistics to support efficient read operations.
-              </p>
-            </div>
-
-          </div>
-
-          <div class="mt-8 border-t border-gray-200 pt-6">
-            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Technologies</p>
-            <div class="mt-4 flex flex-wrap gap-2">
-              <span class="badge">SvelteKit</span>
-              <span class="badge">JavaScript</span>
-              <span class="badge">Supabase</span>
-              <span class="badge">PostgreSQL</span>
-              <span class="badge">SQL</span>
-              <span class="badge">Paymob</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </article>
-
-
-    <!-- AI VOICE -->
-    <article class="reveal project-card mt-7 overflow-hidden rounded-3xl border border-gray-200">
-
-      <div class="grid lg:grid-cols-[1.15fr_.85fr]">
-
-        <div class="p-7 sm:p-10">
-          <div class="flex flex-wrap gap-2">
-            <span class="badge">AI Engineering</span>
-            <span class="badge">Voice Technology</span>
-            <span class="badge">Architecture & Development</span>
-          </div>
-
-          <h3 class="mt-7 text-3xl font-semibold tracking-tight">Egyptian Arabic AI Voice Agent</h3>
-          <p class="mt-2 text-sm font-medium text-gray-500">Real-time conversational AI for business</p>
-
-          <p class="mt-6 text-sm leading-7 text-gray-600">
-            I've been developing and exploring the architecture for an
-            AI voice agent designed to communicate naturally in Egyptian
-            Arabic and serve real business use cases.
-          </p>
-
-          <p class="mt-4 text-sm leading-7 text-gray-600">
-            The interesting part is the complete voice pipeline.
-            A useful voice agent needs to listen, understand, respond
-            naturally, manage interruptions, access business information
-            and trigger actions — all while maintaining acceptable latency.
-          </p>
-
-          <h4 class="mt-8 text-sm font-semibold">Architecture & engineering focus</h4>
-
-          <ul class="mt-4 space-y-3 text-sm leading-6 text-gray-600">
-            <li>• Real-time communication and audio transport.</li>
-            <li>• Speech recognition and Egyptian Arabic support.</li>
-            <li>• LLM integration for conversational reasoning.</li>
-            <li>• Speech synthesis and streaming audio.</li>
-            <li>• Voice activity detection and turn management.</li>
-            <li>• Containerization and deployment considerations.</li>
-            <li>• Latency, concurrency and inference-cost evaluation.</li>
-          </ul>
-        </div>
-
-        <div class="border-t border-gray-200 bg-gray-50 p-7 sm:p-10 lg:border-l lg:border-t-0">
-
-          <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Voice pipeline</h4>
-
-          <div class="mt-6 space-y-3">
-            <div class="rounded-xl border border-gray-200 bg-white p-4">
-              <p class="font-semibold text-sm">Audio Input</p>
-              <p class="mt-1 text-xs text-gray-500">Real-time audio transport through LiveKit</p>
-            </div>
-            <div class="text-center text-gray-400">↓</div>
-            <div class="rounded-xl border border-gray-200 bg-white p-4">
-              <p class="font-semibold text-sm">Speech-to-Text</p>
-              <p class="mt-1 text-xs text-gray-500">Deepgram Nova-3</p>
-            </div>
-            <div class="text-center text-gray-400">↓</div>
-            <div class="rounded-xl border border-indigo-200 bg-indigo-50 p-4">
-              <p class="font-semibold text-sm">LLM Processing</p>
-              <p class="mt-1 text-xs text-gray-500">GPT-4o-mini and conversational business logic</p>
-            </div>
-            <div class="text-center text-gray-400">↓</div>
-            <div class="rounded-xl border border-gray-200 bg-white p-4">
-              <p class="font-semibold text-sm">Text-to-Speech</p>
-              <p class="mt-1 text-xs text-gray-500">Egyptian Arabic EGTTS exploration</p>
-            </div>
-            <div class="text-center text-gray-400">↓</div>
-            <div class="rounded-xl border border-gray-200 bg-white p-4">
-              <p class="font-semibold text-sm">Audio Output</p>
-              <p class="mt-1 text-xs text-gray-500">Streaming response to the user</p>
-            </div>
-          </div>
-
-          <div class="mt-7 flex flex-wrap gap-2">
-            <span class="badge">Python</span>
-            <span class="badge">LiveKit</span>
-            <span class="badge">Deepgram</span>
-            <span class="badge">Silero VAD</span>
-            <span class="badge">Docker</span>
-            <span class="badge">LLMs</span>
-            <span class="badge">n8n</span>
-          </div>
-
-        </div>
-      </div>
-    </article>
-
-
-    <!-- AURA -->
-    <article class="reveal project-card mt-7 overflow-hidden rounded-3xl border border-gray-200">
-
-      <div class="p-7 sm:p-10">
-
-        <div class="flex flex-wrap gap-2">
-          <span class="badge">Product Strategy</span>
-          <span class="badge">Marketplace</span>
-          <span class="badge">Concept & Specification</span>
-        </div>
-
-        <h3 class="mt-7 text-3xl font-semibold tracking-tight">Aura</h3>
-        <p class="mt-2 text-sm font-medium text-gray-500">Local Discovery, Commerce & Loyalty Platform</p>
-
-        <div class="mt-8 grid gap-10 lg:grid-cols-[1fr_.8fr]">
-
-          <div>
-            <p class="text-sm leading-7 text-gray-600">
-              Aura is a marketplace concept I have been developing
-              around a simple idea: helping people discover businesses,
-              offers and activities worth engaging with, and making it
-              easier to move from discovery to an actual transaction.
-            </p>
-
-            <p class="mt-4 text-sm leading-7 text-gray-600">
-              The concept brings together local discovery, merchant
-              storefronts, offers, payments, cashback, loyalty, delivery
-              and AI employees into a connected ecosystem.
-            </p>
-
-            <h4 class="mt-8 text-sm font-semibold">Product architecture</h4>
-
-            <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              <div class="rounded-xl border border-gray-200 p-4">
-                <p class="text-sm font-semibold">Discovery</p>
-                <p class="mt-1 text-xs text-gray-500">Map & offers</p>
-              </div>
-              <div class="rounded-xl border border-gray-200 p-4">
-                <p class="text-sm font-semibold">Storefront</p>
-                <p class="mt-1 text-xs text-gray-500">Merchant presence</p>
-              </div>
-              <div class="rounded-xl border border-gray-200 p-4">
-                <p class="text-sm font-semibold">Commerce</p>
-                <p class="mt-1 text-xs text-gray-500">Transactions</p>
-              </div>
-              <div class="rounded-xl border border-gray-200 p-4">
-                <p class="text-sm font-semibold">Loyalty</p>
-                <p class="mt-1 text-xs text-gray-500">Cashback & rewards</p>
-              </div>
-              <div class="rounded-xl border border-gray-200 p-4">
-                <p class="text-sm font-semibold">Delivery</p>
-                <p class="mt-1 text-xs text-gray-500">Order fulfillment</p>
-              </div>
-              <div class="rounded-xl border border-gray-200 p-4">
-                <p class="text-sm font-semibold">AI Employee</p>
-                <p class="mt-1 text-xs text-gray-500">Business assistance</p>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Product & business practices</h4>
-
-            <div class="mt-5 space-y-5">
-              <div>
-                <p class="text-sm font-semibold">Business model design</p>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Merchant subscriptions, transaction commissions, advertising and AI services.</p>
-              </div>
-              <div>
-                <p class="text-sm font-semibold">Unit economics</p>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Revenue assumptions, fee structures, cashback economics and platform margins.</p>
-              </div>
-              <div>
-                <p class="text-sm font-semibold">Financial logic</p>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Immutable cashback ledger concepts, transaction accounting and delivery-fee allocation.</p>
-              </div>
-              <div>
-                <p class="text-sm font-semibold">Product validation</p>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Customer discovery, merchant validation, transaction testing and economic feasibility.</p>
-              </div>
-              <div>
-                <p class="text-sm font-semibold">Product specification</p>
-                <p class="mt-1 text-sm leading-6 text-gray-600">Roles, permissions, business rules, customer journeys and phased product development.</p>
-              </div>
-            </div>
-
-            <div class="mt-7 rounded-xl border border-amber-200 bg-amber-50 p-4">
-              <p class="text-sm font-semibold text-amber-900">Project status</p>
-              <p class="mt-1 text-xs leading-6 text-amber-800">
-                Product strategy and detailed specifications. Not presented as a launched or production-built platform.
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-
-<!-- ENGINEERING PRACTICES -->
-<section id="engineering" class="bg-gray-950 text-white">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-
-    <div class="reveal max-w-3xl">
-      <p class="text-xs font-semibold uppercase tracking-widest text-indigo-300">04 / Engineering practices</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-        I care about how systems work underneath.
-      </h2>
-      <p class="mt-5 text-base leading-8 text-gray-400">
-        A working application is not just a collection of screens.
-        I pay attention to the architecture, data, business rules
-        and interactions that make the whole system reliable.
-      </p>
-    </div>
-
-    <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-
-      <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
-        <p class="text-xs text-indigo-300">01</p>
-        <h3 class="mt-5 font-semibold">Relational Data Modeling</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-400">
-          Structuring entities and relationships, defining constraints
-          and maintaining consistency between application data.
-        </p>
-      </article>
-
-      <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
-        <p class="text-xs text-indigo-300">02</p>
-        <h3 class="mt-5 font-semibold">Business Logic</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-400">
-          Translating real requirements into validation rules,
-          calculations, state transitions and backend operations.
-        </p>
-      </article>
-
-      <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
-        <p class="text-xs text-indigo-300">03</p>
-        <h3 class="mt-5 font-semibold">API Architecture</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-400">
-          Connecting systems through structured requests,
-          authentication, data validation and clear API contracts.
-        </p>
-      </article>
-
-      <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
-        <p class="text-xs text-indigo-300">04</p>
-        <h3 class="mt-5 font-semibold">Data Integrity</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-400">
-          Thinking about constraints, duplicate operations,
-          transaction consistency and reliable state changes.
-        </p>
-      </article>
-
-      <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
-        <p class="text-xs text-indigo-300">05</p>
-        <h3 class="mt-5 font-semibold">Integration & Error Handling</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-400">
-          Considering external-service failures, retries,
-          validation, logging and safe integration behavior.
-        </p>
-      </article>
-
-      <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
-        <p class="text-xs text-indigo-300">06</p>
-        <h3 class="mt-5 font-semibold">Scalable Architecture</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-400">
-          Separating responsibilities, avoiding unnecessary complexity
-          and considering how systems evolve as requirements grow.
-        </p>
-      </article>
-
-    </div>
-
-  </div>
-</section>
-
-
-<!-- AI AND AUTOMATION -->
-<section class="bg-white">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-
-    <div class="reveal max-w-2xl">
-      <p class="section-label">05 / AI & automation</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-        Bringing intelligence into software and business operations.
-      </h2>
-      <p class="mt-5 text-base leading-7 text-gray-600">
-        My approach is to use traditional software engineering
-        where predictable behavior is required and AI where
-        interpretation, reasoning or natural interaction adds value.
-      </p>
-    </div>
-
-    <div class="mt-12 grid gap-6 lg:grid-cols-2">
-
-      <div class="rounded-2xl border border-gray-200 p-7 sm:p-9">
-        <h3 class="text-xl font-semibold">AI Agent Architecture</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Building agents that can understand requests, use tools,
-          access relevant data and interact with external systems.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">Prompt Engineering</span>
-          <span class="badge">Context Engineering</span>
-          <span class="badge">Tool Calling</span>
-          <span class="badge">MCP</span>
-          <span class="badge">RAG</span>
-          <span class="badge">Context summarization</span>
-          <span class="badge">Sub-agents & Hierarchical Context</span>
-          <span class="badge">Structured Outputs</span>
-          <span class="badge">Human Handoff</span>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 p-7 sm:p-9">
-        <h3 class="text-xl font-semibold">Business Workflow Automation</h3>
-        <p class="mt-3 text-sm leading-7 text-gray-600">
-          Connecting business systems using event triggers,
-          API calls, conditional logic, data transformation and AI.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-2">
-          <span class="badge">n8n</span>
-          <span class="badge">REST APIs</span>
-          <span class="badge">Webhooks</span>
-          <span class="badge">CRM Concepts</span>
-          <span class="badge">Integrations</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="mt-7 rounded-2xl border border-gray-200 bg-gray-50 p-7 sm:p-9">
-      <h3 class="text-lg font-semibold">How I approach an intelligent workflow</h3>
-
-      <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <p class="text-xs font-semibold text-indigo-600">01</p>
-          <p class="mt-2 text-sm font-semibold">Understand</p>
-          <p class="mt-2 text-xs leading-6 text-gray-500">Understand the actual business problem and process.</p>
-        </div>
-        <div>
-          <p class="text-xs font-semibold text-indigo-600">02</p>
-          <p class="mt-2 text-sm font-semibold">Architect</p>
-          <p class="mt-2 text-xs leading-6 text-gray-500">Decide what belongs in code, automation, AI or human review.</p>
-        </div>
-        <div>
-          <p class="text-xs font-semibold text-indigo-600">03</p>
-          <p class="mt-2 text-sm font-semibold">Implement</p>
-          <p class="mt-2 text-xs leading-6 text-gray-500">Connect APIs, data, business logic and intelligent components.</p>
-        </div>
-        <div>
-          <p class="text-xs font-semibold text-indigo-600">04</p>
-          <p class="mt-2 text-sm font-semibold">Validate</p>
-          <p class="mt-2 text-xs leading-6 text-gray-500">Test, monitor, handle errors and measure outcomes.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- TOOLS & DEVELOPMENT -->
-<section class="bg-gray-50">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-
-    <div class="reveal max-w-2xl">
-      <p class="section-label">06 / Development environment</p>
-      <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
-        Technologies and tools I work with.
-      </h2>
-      <p class="mt-5 text-sm leading-7 text-gray-600">
-        My toolkit includes conventional development technologies
-        and newer AI-assisted development environments.
-        My focus is on understanding and validating what I build,
-        rather than depending on tools blindly.
-      </p>
-    </div>
-
-    <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">Programming</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">JavaScript</span>
-          <span class="badge">TypeScript</span>
-          <span class="badge">Python</span>
-          <span class="badge">HTML</span>
-          <span class="badge">CSS/Tailwind CSS</span>
-          <span class="badge">SQL</span>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">Frameworks & Backend</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">SvelteKit</span>
-          <span class="badge">React Native</span>
-          <span class="badge">Angular</span>
-          <span class="badge">Flutter</span>
-        </div>
-      </div>
-      
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">Frameworks & Backend</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">Node.js</span>
-          <span class="badge">Express</span>
-          <span class="badge">REST</span>
-          <span class="badge">Flask</span>
-          <span class="badge">FastAPI</span>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">Database & Services</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">PostgreSQL</span>
-          <span class="badge">MySQL</span>
-          <span class="badge">Supabase</span>
-          <span class="badge">Payment Integration</span>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">AI & Infrastructure</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">LiveKit</span>
-          <span class="badge">Deepgram</span>
-          <span class="badge">LLM APIs</span>
-          <span class="badge">Docker</span>
-          <span class="badge">TTS / STT</span>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">Automation & Integration</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">n8n</span>
-          <span class="badge">Webhooks</span>
-          <span class="badge">API Integrations</span>
-          <span class="badge">JSON</span>
-        </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6">
-        <h3 class="font-semibold">Development Tools</h3>
-        <div class="mt-5 flex flex-wrap gap-2">
-          <span class="badge">VS Code</span>
-          <span class="badge">Windsurf</span>
-          <span class="badge">OpenCode</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- HONEST POSITIONING -->
-<section class="bg-white">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-    <div class="reveal mx-auto max-w-3xl text-center">
-      <p class="section-label">07 / What I'm building toward</p>
-
-      <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
-        Still learning. Still building. Always looking deeper.
-      </h2>
-
-      <p class="mt-7 text-base leading-8 text-gray-600">
-        I don't consider myself someone who has mastered every part
-        of software engineering or AI. I'm still developing my experience,
-        particularly in large-scale production environments, enterprise
-        automation and long-term system operations.
-      </p>
-
-      <p class="mt-5 text-base leading-8 text-gray-600">
-        But I enjoy the process of learning by building. I like taking
-        something from an initial idea, understanding the requirements,
-        designing the architecture and working through the technical
-        challenges until it becomes a functioning system.
-      </p>
-
-      <p class="mt-5 text-base leading-8 text-gray-600">
-        My direction is to become an engineer who can combine software
-        development, system architecture, AI and business thinking
-        to build useful, reliable products.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-<!-- CONTACT -->
-<section id="contact" class="bg-gray-950 text-white">
-  <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
-
-    <p class="text-xs font-semibold uppercase tracking-widest text-indigo-300">08 / Contact</p>
-
-    <h2 class="mt-5 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
-      Interested in building something meaningful together?
-    </h2>
-
-    <p class="mt-6 max-w-2xl text-base leading-8 text-gray-400">
-      I'm open to opportunities involving software development,
-      AI engineering, intelligent systems, automation and product development.
-      I'd love to connect with people building practical technology.
-    </p>
-
-    <div class="mt-9 flex flex-wrap gap-3">
-      <a href="mailto:your.email@example.com" class="rounded-full bg-white px-6 py-3 text-sm font-medium text-gray-900 hover:bg-gray-200">
-        Email me →
-      </a>
-      <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 px-6 py-3 text-sm font-medium hover:bg-white/10">
-        LinkedIn ↗
-      </a>
-    </div>
-
-  </div>
-</section>
-
-</main>
-
-
-<footer class="border-t border-white/10 bg-gray-950 text-gray-500">
-  <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-xs sm:flex-row sm:justify-between sm:px-6">
-    <p>Software, systems and intelligent products.</p>
-    <p>© <span id="year"></span></p>
-  </div>
-</footer>
-
-
+ </head>
+ <body class="antialiased">
+<div class="scroll-progress" id="scrollProgress"></div>
+ <!-- NAVIGATION -->
+ <header class="fixed top-0 z-50 w-full border-b border-gray-200/70 glass">
+   <div class="mx-auto flex h-[72px] max-w-6xl items-center justify-between px-5 sm:px-6">
+     <a href="#home" class="font-semibold tracking-tight">
+       Software & AI<span class="text-indigo-600">.</span>
+     </a>
+     <nav class="hidden items-center gap-7 md:flex">
+       <a href="#about" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">About<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
+       <a href="#expertise" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Expertise<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
+       <a href="#projects" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Projects<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
+       <a href="#engineering" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Engineering<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
+       <a href="#contact" class="nav-link relative text-sm text-gray-500 hover:text-gray-900">Contact<span class="absolute -bottom-2 left-0 h-px w-0 bg-gray-900 transition-all"></span></a>
+     </nav>
+     <a href="#contact" class="hidden rounded-full bg-gray-900 px-5 py-2.5 text-xs font-medium text-white hover:bg-gray-700 md:block">Let's connect</a>
+     <button id="menuButton" class="rounded-lg p-2 hover:bg-gray-100 md:hidden" aria-label="Toggle navigation">
+       <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+         <path stroke-width="1.8" stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/>
+       </svg>
+     </button>
+   </div>
+   <nav id="mobileMenu" class="hidden border-t border-gray-200 bg-white px-6 py-5 md:hidden">
+     <div class="flex flex-col gap-4 text-sm text-gray-600">
+       <a href="#about">About</a>
+       <a href="#expertise">Expertise</a>
+       <a href="#projects">Projects</a>
+       <a href="#engineering">Engineering</a>
+       <a href="#contact">Contact</a>
+     </div>
+   </nav>
+ </header>
+ <main id="home">
+ <!-- HERO -->
+ <section class="overflow-hidden">
+   <div class="hero-grid mx-auto grid max-w-6xl gap-10 px-5 pb-24 pt-32 sm:px-6 sm:pb-32 sm:pt-40 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
+     <div class="reveal max-w-4xl">
+       <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs text-gray-600">
+         <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+         Software Development · AI Engineering · Systems
+       </div>
+       <h1 class="text-5xl font-semibold leading-[1.04] tracking-[-.045em] sm:text-6xl md:text-7xl">
+         Building software,<br>
+         <span class="gradient-text">intelligent systems</span><br>
+         and meaningful products.
+       </h1>
+       <p class="mt-8 max-w-2xl text-base leading-8 text-gray-600 sm:text-lg">
+         I'm a software developer and AI-focused engineer interested in
+         building complete systems — from frontend experiences and backend
+         architecture to databases, integrations, automation and AI agents.
+         I enjoy turning complex ideas and business requirements into
+         practical, working software.
+       </p>
+       <div class="mt-9 flex flex-wrap gap-3">
+         <a href="#projects" class="rounded-full bg-gray-900 px-6 py-3 text-sm font-medium text-white transition hover:-translate-y-0.5 hover:bg-gray-700">
+           Explore my projects →
+         </a>
+         <a href="#contact" class="rounded-full border border-gray-300 bg-white px-6 py-3 text-sm font-medium transition hover:border-gray-500">
+           Get in touch
+         </a>
+       </div>
+       <div class="mt-14 grid max-w-4xl grid-cols-2 gap-7 border-t border-gray-200 pt-8 sm:grid-cols-4">
+         <div><p class="text-lg font-semibold">Full-stack</p><p class="mt-1 text-xs text-gray-500">Application development</p></div>
+         <div><p class="text-lg font-semibold">Backend</p><p class="mt-1 text-xs text-gray-500">Data & system logic</p></div>
+         <div><p class="text-lg font-semibold">AI Systems</p><p class="mt-1 text-xs text-gray-500">Agents & intelligent workflows</p></div>
+         <div><p class="text-lg font-semibold">Product</p><p class="mt-1 text-xs text-gray-500">Architecture & business thinking</p></div>
+       </div>
+     </div>
+     <div class="hero-visual reveal" aria-label="Interactive illustration of a modern AI software system">
+       <div class="system-card tilt" id="systemCard">
+         <div class="system-grid"></div>
+         <div class="visual-label">SYSTEM / ARCHITECTURE</div>
+         <div class="visual-status"><i></i> BUILD ACTIVE</div>
+         <div class="connector c1"></div><div class="connector c2"></div><div class="connector c3"></div><div class="connector c4"></div>
+         <div class="core">SOFTWARE<br>&amp; AI<br>SYSTEM</div>
+         <div class="node node-a"><b>Frontend</b><span>UI</span></div>
+         <div class="node node-b"><b>AI Agent</b><span>Reasoning</span></div>
+         <div class="node node-c"><b>Database</b><span>Data</span></div>
+         <div class="node node-d"><b>API</b><span>Integrations</span></div>
+         <div class="mini-metric">
+           <div><strong>Full-stack</strong><span>APPLICATIONS</span></div>
+           <div><strong>AI + APIs</strong><span>INTELLIGENCE</span></div>
+           <div><strong>Systems</strong><span>ARCHITECTURE</span></div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- ABOUT -->
+ <section id="about" class="border-t border-gray-200 bg-white">
+   <div class="mx-auto grid max-w-6xl gap-14 px-5 py-24 sm:px-6 sm:py-32 lg:grid-cols-[.7fr_1.3fr]">
+     <div class="reveal">
+       <p class="section-label">01 / About me</p>
+       <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+         More than just AI. I build the systems behind it.
+       </h2>
+     </div>
+     <div class="reveal space-y-6 text-base leading-8 text-gray-600">
+       <p>
+         My journey started with software and web development. I became
+         interested in understanding how applications actually work:
+         how the frontend communicates with the backend, how databases
+         organize information, how APIs connect services, and how business
+         rules translate into working software.
+       </p>
+       <p>
+         Over time, my interests expanded into more complex systems,
+         product architecture and AI engineering. I started exploring
+         how AI could become part of applications and perform useful
+         tasks through tools, APIs, databases and automated workflows.
+       </p>
+       <p>
+         Today, I work across software development, backend engineering,
+         database design, integrations, AI agents and automation.
+         I don't see these as separate disciplines. They are different
+         parts of building a complete solution.
+       </p>
+       <p>
+         I particularly enjoy understanding a problem from both the
+         technical and business perspectives, then breaking it down
+         into components that can be designed, implemented and improved.
+       </p>
+       <div class="rounded-2xl border border-gray-200 bg-gray-50 p-6">
+         <p class="font-semibold text-gray-900">A note about my experience</p>
+         <p class="mt-2 text-sm leading-7 text-gray-600">
+           I'm intentional about representing my experience accurately.
+           Some of my work involves implemented software systems, while
+           other projects are in development or product-design stages.
+           I don't claim large-scale enterprise automation experience
+           or present concepts as launched products. I'm continuously
+           developing my engineering skills through practical work.
+         </p>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- EXPERTISE -->
+ <section id="expertise" class="bg-gray-50">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <div class="reveal max-w-2xl">
+       <p class="section-label">02 / Technical expertise</p>
+       <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">The different layers I work with.</h2>
+       <p class="mt-5 leading-7 text-gray-600">
+         My technical interests extend from application interfaces
+         to databases, integrations and intelligent systems.
+       </p>
+     </div>
+     <div class="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+       <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
+         <div class="text-xs font-semibold text-indigo-600">01 / FRONTEND</div>
+         <h3 class="mt-5 text-xl font-semibold">Web Development</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Building responsive application interfaces, reusable components,
+           page structures and user experiences connected to backend services.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">HTML</span><span class="badge">CSS</span>
+           <span class="badge">JavaScript</span><span class="badge">SvelteKit</span>
+           <span class="badge">Tailwind CSS</span>
+         </div>
+       </article>
+       <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
+         <div class="text-xs font-semibold text-indigo-600">02 / BACKEND</div>
+         <h3 class="mt-5 text-xl font-semibold">Backend Engineering</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Designing application logic, REST endpoints, server-side
+           operations, authentication flows and integrations between systems.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">Node.js</span><span class="badge">Express</span>
+           <span class="badge">REST APIs</span><span class="badge">JavaScript</span>
+           <span class="badge">Authentication</span>
+         </div>
+       </article>
+       <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
+         <div class="text-xs font-semibold text-indigo-600">03 / DATABASES</div>
+         <h3 class="mt-5 text-xl font-semibold">Data & Database Systems</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Working with relational data, schema design, queries,
+           database functions, constraints, business logic and data consistency.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">PostgreSQL</span><span class="badge">MySQL</span>
+           <span class="badge">Supabase</span><span class="badge">SQL</span>
+           <span class="badge">Database Functions</span>
+         </div>
+       </article>
+       <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
+         <div class="text-xs font-semibold text-indigo-600">04 / INTEGRATIONS</div>
+         <h3 class="mt-5 text-xl font-semibold">APIs & Integrations</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Connecting applications and external services, handling
+           data exchange, authentication, payment services and webhooks.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">REST</span><span class="badge">Webhooks</span>
+           <span class="badge">JSON</span><span class="badge">Paymob</span>
+           <span class="badge">Third-party APIs</span>
+         </div>
+       </article>
+       <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
+         <div class="text-xs font-semibold text-indigo-600">05 / AI ENGINEERING</div>
+         <h3 class="mt-5 text-xl font-semibold">AI & Intelligent Systems</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Exploring LLM applications, agent architectures,
+           conversational systems, voice pipelines and AI-powered tools.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">LLMs</span><span class="badge">AI Agents</span>
+           <span class="badge">LiveKit</span><span class="badge">Deepgram</span>
+           <span class="badge">Python</span>
+         </div>
+       </article>
+       <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
+         <div class="text-xs font-semibold text-indigo-600">06 / AUTOMATION</div>
+         <h3 class="mt-5 text-xl font-semibold">Workflow Automation</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Designing workflows around triggers, integrations,
+           data processing, AI decisions, business rules and human handoffs.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">n8n</span><span class="badge">APIs</span>
+           <span class="badge">Webhooks</span><span class="badge">AI Workflows</span>
+         </div>
+       </article>
+     </div>
+   </div>
+ </section>
+ <!-- PROJECTS -->
+ <section id="projects" class="bg-white">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <div class="reveal max-w-2xl">
+       <p class="section-label">03 / Selected projects</p>
+       <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">A closer look at what I've worked on.</h2>
+       <p class="mt-5 leading-7 text-gray-600">
+         Different projects, different challenges — from application
+         engineering and database logic to AI infrastructure and product strategy.
+       </p>
+     </div>
+     <!-- V LEAGUE -->
+     <article class="reveal project-card mt-14 overflow-hidden rounded-3xl border border-gray-200">
+       <div class="grid lg:grid-cols-[1.15fr\_.85fr]">
+         <div class="p-7 sm:p-10">
+           <div class="flex flex-wrap gap-2">
+             <span class="badge">Full-stack development</span>
+             <span class="badge">Sports technology</span>
+             <span class="badge">Implemented work</span>
+           </div>
+           <h3 class="mt-7 text-3xl font-semibold tracking-tight">V League</h3>
+           <p class="mt-2 text-sm font-medium text-gray-500">Sports League Platform</p>
+           <p class="mt-6 text-sm leading-7 text-gray-600">
+             One of my most practical software development experiences.
+             I worked on transforming a relatively simple static website
+             into a much more complete, production-oriented sports league
+             application.
+           </p>
+           <p class="mt-4 text-sm leading-7 text-gray-600">
+             The challenge was not simply building pages. The platform
+             needed structured data, user authentication, event management,
+             performance calculations, athlete rankings, points and
+             standings. This required implementing the application logic
+             and database structure behind the experience.
+           </p>
+           <h4 class="mt-8 text-sm font-semibold">What I worked on</h4>
+           <ul class="mt-4 space-y-3 text-sm leading-6 text-gray-600">
+             <li>• Developing the application using SvelteKit and JavaScript.</li>
+             <li>• Using Supabase for authentication, PostgreSQL and backend data services.</li>
+             <li>• Structuring relational data for athletes, clubs, events and results.</li>
+             <li>• Developing scoring and ranking calculation logic.</li>
+             <li>• Integrating Paymob payment functionality.</li>
+             <li>• Designing database-driven standings and statistics.</li>
+           </ul>
+         </div>
+         <div class="border-t border-gray-200 bg-gray-50 p-7 sm:p-10 lg:border-l lg:border-t-0">
+           <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Technical implementation</h4>
+           <div class="mt-6 space-y-6">
+             <div>
+               <p class="font-semibold text-sm">Frontend — SvelteKit</p>
+               <p class="mt-2 text-sm leading-6 text-gray-600">
+                 Application pages, reusable components, routing
+                 and interactions using JavaScript.
+               </p>
+             </div>
+             <div>
+               <p class="font-semibold text-sm">Backend — Supabase</p>
+               <p class="mt-2 text-sm leading-6 text-gray-600">
+                 Authentication, PostgreSQL data management,
+                 SQL functions and database-driven operations.
+               </p>
+             </div>
+             <div>
+               <p class="font-semibold text-sm">Scoring & Ranking Engine</p>
+               <p class="mt-2 text-sm leading-6 text-gray-600">
+                 Best-performance calculations, ranking generation,
+                 points allocation and standings refresh.
+               </p>
+             </div>
+             <div>
+               <p class="font-semibold text-sm">Database Optimization</p>
+               <p class="mt-2 text-sm leading-6 text-gray-600">
+                 Designed materialized views for individual standings
+                 and event statistics to support efficient read operations.
+               </p>
+             </div>
+           </div>
+           <div class="mt-8 border-t border-gray-200 pt-6">
+             <p class="text-xs font-semibold uppercase tracking-widest text-gray-400">Technologies</p>
+             <div class="mt-4 flex flex-wrap gap-2">
+               <span class="badge">SvelteKit</span>
+               <span class="badge">JavaScript</span>
+               <span class="badge">Supabase</span>
+               <span class="badge">PostgreSQL</span>
+               <span class="badge">SQL</span>
+               <span class="badge">Paymob</span>
+             </div>
+           </div>
+         </div>
+       </div>
+     </article>
+     <!-- AI VOICE -->
+     <article class="reveal project-card mt-7 overflow-hidden rounded-3xl border border-gray-200">
+       <div class="grid lg:grid-cols-[1.15fr\_.85fr]">
+         <div class="p-7 sm:p-10">
+           <div class="flex flex-wrap gap-2">
+             <span class="badge">AI Engineering</span>
+             <span class="badge">Voice Technology</span>
+             <span class="badge">Architecture & Development</span>
+           </div>
+           <h3 class="mt-7 text-3xl font-semibold tracking-tight">Egyptian Arabic AI Voice Agent</h3>
+           <p class="mt-2 text-sm font-medium text-gray-500">Real-time conversational AI for business</p>
+           <p class="mt-6 text-sm leading-7 text-gray-600">
+             I've been developing and exploring the architecture for an
+             AI voice agent designed to communicate naturally in Egyptian
+             Arabic and serve real business use cases.
+           </p>
+           <p class="mt-4 text-sm leading-7 text-gray-600">
+             The interesting part is the complete voice pipeline.
+             A useful voice agent needs to listen, understand, respond
+             naturally, manage interruptions, access business information
+             and trigger actions — all while maintaining acceptable latency.
+           </p>
+           <h4 class="mt-8 text-sm font-semibold">Architecture & engineering focus</h4>
+           <ul class="mt-4 space-y-3 text-sm leading-6 text-gray-600">
+             <li>• Real-time communication and audio transport.</li>
+             <li>• Speech recognition and Egyptian Arabic support.</li>
+             <li>• LLM integration for conversational reasoning.</li>
+             <li>• Speech synthesis and streaming audio.</li>
+             <li>• Voice activity detection and turn management.</li>
+             <li>• Containerization and deployment considerations.</li>
+             <li>• Latency, concurrency and inference-cost evaluation.</li>
+           </ul>
+         </div>
+         <div class="border-t border-gray-200 bg-gray-50 p-7 sm:p-10 lg:border-l lg:border-t-0">
+           <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Voice pipeline</h4>
+           <div class="mt-6 space-y-3">
+             <div class="rounded-xl border border-gray-200 bg-white p-4">
+               <p class="font-semibold text-sm">Audio Input</p>
+               <p class="mt-1 text-xs text-gray-500">Real-time audio transport through LiveKit</p>
+             </div>
+             <div class="text-center text-gray-400">↓</div>
+             <div class="rounded-xl border border-gray-200 bg-white p-4">
+               <p class="font-semibold text-sm">Speech-to-Text</p>
+               <p class="mt-1 text-xs text-gray-500">Deepgram Nova-3</p>
+             </div>
+             <div class="text-center text-gray-400">↓</div>
+             <div class="rounded-xl border border-indigo-200 bg-indigo-50 p-4">
+               <p class="font-semibold text-sm">LLM Processing</p>
+               <p class="mt-1 text-xs text-gray-500">GPT-4o-mini and conversational business logic</p>
+             </div>
+             <div class="text-center text-gray-400">↓</div>
+             <div class="rounded-xl border border-gray-200 bg-white p-4">
+               <p class="font-semibold text-sm">Text-to-Speech</p>
+               <p class="mt-1 text-xs text-gray-500">Egyptian Arabic EGTTS exploration</p>
+             </div>
+             <div class="text-center text-gray-400">↓</div>
+             <div class="rounded-xl border border-gray-200 bg-white p-4">
+               <p class="font-semibold text-sm">Audio Output</p>
+               <p class="mt-1 text-xs text-gray-500">Streaming response to the user</p>
+             </div>
+           </div>
+           <div class="mt-7 flex flex-wrap gap-2">
+             <span class="badge">Python</span>
+             <span class="badge">LiveKit</span>
+             <span class="badge">Deepgram</span>
+             <span class="badge">Silero VAD</span>
+             <span class="badge">Docker</span>
+             <span class="badge">LLMs</span>
+             <span class="badge">n8n</span>
+           </div>
+         </div>
+       </div>
+     </article>
+     <!-- AURA -->
+     <article class="reveal project-card mt-7 overflow-hidden rounded-3xl border border-gray-200">
+       <div class="p-7 sm:p-10">
+         <div class="flex flex-wrap gap-2">
+           <span class="badge">Product Strategy</span>
+           <span class="badge">Marketplace</span>
+           <span class="badge">Concept & Specification</span>
+         </div>
+         <h3 class="mt-7 text-3xl font-semibold tracking-tight">Aura</h3>
+         <p class="mt-2 text-sm font-medium text-gray-500">Local Discovery, Commerce & Loyalty Platform</p>
+         <div class="mt-8 grid gap-10 lg:grid-cols-[1fr\_.8fr]">
+           <div>
+             <p class="text-sm leading-7 text-gray-600">
+               Aura is a marketplace concept I have been developing
+               around a simple idea: helping people discover businesses,
+               offers and activities worth engaging with, and making it
+               easier to move from discovery to an actual transaction.
+             </p>
+             <p class="mt-4 text-sm leading-7 text-gray-600">
+               The concept brings together local discovery, merchant
+               storefronts, offers, payments, cashback, loyalty, delivery
+               and AI employees into a connected ecosystem.
+             </p>
+             <h4 class="mt-8 text-sm font-semibold">Product architecture</h4>
+             <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+               <div class="rounded-xl border border-gray-200 p-4">
+                 <p class="text-sm font-semibold">Discovery</p>
+                 <p class="mt-1 text-xs text-gray-500">Map & offers</p>
+               </div>
+               <div class="rounded-xl border border-gray-200 p-4">
+                 <p class="text-sm font-semibold">Storefront</p>
+                 <p class="mt-1 text-xs text-gray-500">Merchant presence</p>
+               </div>
+               <div class="rounded-xl border border-gray-200 p-4">
+                 <p class="text-sm font-semibold">Commerce</p>
+                 <p class="mt-1 text-xs text-gray-500">Transactions</p>
+               </div>
+               <div class="rounded-xl border border-gray-200 p-4">
+                 <p class="text-sm font-semibold">Loyalty</p>
+                 <p class="mt-1 text-xs text-gray-500">Cashback & rewards</p>
+               </div>
+               <div class="rounded-xl border border-gray-200 p-4">
+                 <p class="text-sm font-semibold">Delivery</p>
+                 <p class="mt-1 text-xs text-gray-500">Order fulfillment</p>
+               </div>
+               <div class="rounded-xl border border-gray-200 p-4">
+                 <p class="text-sm font-semibold">AI Employee</p>
+                 <p class="mt-1 text-xs text-gray-500">Business assistance</p>
+               </div>
+             </div>
+           </div>
+           <div>
+             <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Product & business practices</h4>
+             <div class="mt-5 space-y-5">
+               <div>
+                 <p class="text-sm font-semibold">Business model design</p>
+                 <p class="mt-1 text-sm leading-6 text-gray-600">Merchant subscriptions, transaction commissions, advertising and AI services.</p>
+               </div>
+               <div>
+                 <p class="text-sm font-semibold">Unit economics</p>
+                 <p class="mt-1 text-sm leading-6 text-gray-600">Revenue assumptions, fee structures, cashback economics and platform margins.</p>
+               </div>
+               <div>
+                 <p class="text-sm font-semibold">Financial logic</p>
+                 <p class="mt-1 text-sm leading-6 text-gray-600">Immutable cashback ledger concepts, transaction accounting and delivery-fee allocation.</p>
+               </div>
+               <div>
+                 <p class="text-sm font-semibold">Product validation</p>
+                 <p class="mt-1 text-sm leading-6 text-gray-600">Customer discovery, merchant validation, transaction testing and economic feasibility.</p>
+               </div>
+               <div>
+                 <p class="text-sm font-semibold">Product specification</p>
+                 <p class="mt-1 text-sm leading-6 text-gray-600">Roles, permissions, business rules, customer journeys and phased product development.</p>
+               </div>
+             </div>
+             <div class="mt-7 rounded-xl border border-amber-200 bg-amber-50 p-4">
+               <p class="text-sm font-semibold text-amber-900">Project status</p>
+               <p class="mt-1 text-xs leading-6 text-amber-800">
+                 Product strategy and detailed specifications. Not presented as a launched or production-built platform.
+               </p>
+             </div>
+           </div>
+         </div>
+       </div>
+     </article>
+   </div>
+ </section>
+ <!-- ENGINEERING PRACTICES -->
+ <section id="engineering" class="bg-gray-950 text-white">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <div class="reveal max-w-3xl">
+       <p class="text-xs font-semibold uppercase tracking-widest text-indigo-300">04 / Engineering practices</p>
+       <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+         I care about how systems work underneath.
+       </h2>
+       <p class="mt-5 text-base leading-8 text-gray-400">
+         A working application is not just a collection of screens.
+         I pay attention to the architecture, data, business rules
+         and interactions that make the whole system reliable.
+       </p>
+     </div>
+     <div class="mt-14 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+       <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
+         <p class="text-xs text-indigo-300">01</p>
+         <h3 class="mt-5 font-semibold">Relational Data Modeling</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-400">
+           Structuring entities and relationships, defining constraints
+           and maintaining consistency between application data.
+         </p>
+       </article>
+       <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
+         <p class="text-xs text-indigo-300">02</p>
+         <h3 class="mt-5 font-semibold">Business Logic</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-400">
+           Translating real requirements into validation rules,
+           calculations, state transitions and backend operations.
+         </p>
+       </article>
+       <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
+         <p class="text-xs text-indigo-300">03</p>
+         <h3 class="mt-5 font-semibold">API Architecture</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-400">
+           Connecting systems through structured requests,
+           authentication, data validation and clear API contracts.
+         </p>
+       </article>
+       <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
+         <p class="text-xs text-indigo-300">04</p>
+         <h3 class="mt-5 font-semibold">Data Integrity</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-400">
+           Thinking about constraints, duplicate operations,
+           transaction consistency and reliable state changes.
+         </p>
+       </article>
+       <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
+         <p class="text-xs text-indigo-300">05</p>
+         <h3 class="mt-5 font-semibold">Integration & Error Handling</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-400">
+           Considering external-service failures, retries,
+           validation, logging and safe integration behavior.
+         </p>
+       </article>
+       <article class="rounded-2xl border border-white/10 bg-white/[.04] p-7">
+         <p class="text-xs text-indigo-300">06</p>
+         <h3 class="mt-5 font-semibold">Scalable Architecture</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-400">
+           Separating responsibilities, avoiding unnecessary complexity
+           and considering how systems evolve as requirements grow.
+         </p>
+       </article>
+     </div>
+   </div>
+ </section>
+ <!-- AI AND AUTOMATION -->
+ <section class="bg-white">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <div class="reveal max-w-2xl">
+       <p class="section-label">05 / AI & automation</p>
+       <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+         Bringing intelligence into software and business operations.
+       </h2>
+       <p class="mt-5 text-base leading-7 text-gray-600">
+         My approach is to use traditional software engineering
+         where predictable behavior is required and AI where
+         interpretation, reasoning or natural interaction adds value.
+       </p>
+     </div>
+     <div class="mt-12 grid gap-6 lg:grid-cols-2">
+       <div class="rounded-2xl border border-gray-200 p-7 sm:p-9">
+         <h3 class="text-xl font-semibold">AI Agent Architecture</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Building agents that can understand requests, use tools,
+           access relevant data and interact with external systems.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">Prompt Engineering</span>
+           <span class="badge">Context Engineering</span>
+           <span class="badge">Tool Calling</span>
+           <span class="badge">MCP</span>
+           <span class="badge">RAG</span>
+           <span class="badge">Context summarization</span>
+           <span class="badge">Sub-agents & Hierarchical Context</span>
+           <span class="badge">Structured Outputs</span>
+           <span class="badge">Human Handoff</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 p-7 sm:p-9">
+         <h3 class="text-xl font-semibold">Business Workflow Automation</h3>
+         <p class="mt-3 text-sm leading-7 text-gray-600">
+           Connecting business systems using event triggers,
+           API calls, conditional logic, data transformation and AI.
+         </p>
+         <div class="mt-6 flex flex-wrap gap-2">
+           <span class="badge">n8n</span>
+           <span class="badge">REST APIs</span>
+           <span class="badge">Webhooks</span>
+           <span class="badge">CRM Concepts</span>
+           <span class="badge">Integrations</span>
+         </div>
+       </div>
+     </div>
+     <div class="mt-7 rounded-2xl border border-gray-200 bg-gray-50 p-7 sm:p-9">
+       <h3 class="text-lg font-semibold">How I approach an intelligent workflow</h3>
+       <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+         <div>
+           <p class="text-xs font-semibold text-indigo-600">01</p>
+           <p class="mt-2 text-sm font-semibold">Understand</p>
+           <p class="mt-2 text-xs leading-6 text-gray-500">Understand the actual business problem and process.</p>
+         </div>
+         <div>
+           <p class="text-xs font-semibold text-indigo-600">02</p>
+           <p class="mt-2 text-sm font-semibold">Architect</p>
+           <p class="mt-2 text-xs leading-6 text-gray-500">Decide what belongs in code, automation, AI or human review.</p>
+         </div>
+         <div>
+           <p class="text-xs font-semibold text-indigo-600">03</p>
+           <p class="mt-2 text-sm font-semibold">Implement</p>
+           <p class="mt-2 text-xs leading-6 text-gray-500">Connect APIs, data, business logic and intelligent components.</p>
+         </div>
+         <div>
+           <p class="text-xs font-semibold text-indigo-600">04</p>
+           <p class="mt-2 text-sm font-semibold">Validate</p>
+           <p class="mt-2 text-xs leading-6 text-gray-500">Test, monitor, handle errors and measure outcomes.</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- TOOLS & DEVELOPMENT -->
+ <section class="bg-gray-50">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <div class="reveal max-w-2xl">
+       <p class="section-label">06 / Development environment</p>
+       <h2 class="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+         Technologies and tools I work with.
+       </h2>
+       <p class="mt-5 text-sm leading-7 text-gray-600">
+         My toolkit includes conventional development technologies
+         and newer AI-assisted development environments.
+         My focus is on understanding and validating what I build,
+         rather than depending on tools blindly.
+       </p>
+     </div>
+     <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">Programming</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">JavaScript</span>
+           <span class="badge">TypeScript</span>
+           <span class="badge">Python</span>
+           <span class="badge">HTML</span>
+           <span class="badge">CSS/Tailwind CSS</span>
+           <span class="badge">SQL</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">Frameworks & Backend</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">SvelteKit</span>
+           <span class="badge">React Native</span>
+           <span class="badge">Angular</span>
+           <span class="badge">Flutter</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">Frameworks & Backend</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">Node.js</span>
+           <span class="badge">Express</span>
+           <span class="badge">REST</span>
+           <span class="badge">Flask</span>
+           <span class="badge">FastAPI</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">Database & Services</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">PostgreSQL</span>
+           <span class="badge">MySQL</span>
+           <span class="badge">Supabase</span>
+           <span class="badge">Payment Integration</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">AI & Infrastructure</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">LiveKit</span>
+           <span class="badge">Deepgram</span>
+           <span class="badge">LLM APIs</span>
+           <span class="badge">Docker</span>
+           <span class="badge">TTS / STT</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">Automation & Integration</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">n8n</span>
+           <span class="badge">Webhooks</span>
+           <span class="badge">API Integrations</span>
+           <span class="badge">JSON</span>
+         </div>
+       </div>
+       <div class="rounded-2xl border border-gray-200 bg-white p-6">
+         <h3 class="font-semibold">Development Tools</h3>
+         <div class="mt-5 flex flex-wrap gap-2">
+           <span class="badge">VS Code</span>
+           <span class="badge">Windsurf</span>
+           <span class="badge">OpenCode</span>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- HONEST POSITIONING -->
+ <section class="bg-white">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <div class="reveal mx-auto max-w-3xl text-center">
+       <p class="section-label">07 / What I'm building toward</p>
+       <h2 class="mt-5 text-3xl font-semibold tracking-tight sm:text-4xl">
+         Still learning. Still building. Always looking deeper.
+       </h2>
+       <p class="mt-7 text-base leading-8 text-gray-600">
+         I don't consider myself someone who has mastered every part
+         of software engineering or AI. I'm still developing my experience,
+         particularly in large-scale production environments, enterprise
+         automation and long-term system operations.
+       </p>
+       <p class="mt-5 text-base leading-8 text-gray-600">
+         But I enjoy the process of learning by building. I like taking
+         something from an initial idea, understanding the requirements,
+         designing the architecture and working through the technical
+         challenges until it becomes a functioning system.
+       </p>
+       <p class="mt-5 text-base leading-8 text-gray-600">
+         My direction is to become an engineer who can combine software
+         development, system architecture, AI and business thinking
+         to build useful, reliable products.
+       </p>
+     </div>
+   </div>
+ </section>
+ <!-- CONTACT -->
+ <section id="contact" class="bg-gray-950 text-white">
+   <div class="mx-auto max-w-6xl px-5 py-24 sm:px-6 sm:py-32">
+     <p class="text-xs font-semibold uppercase tracking-widest text-indigo-300">08 / Contact</p>
+     <h2 class="mt-5 max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+       Interested in building something meaningful together?
+     </h2>
+     <p class="mt-6 max-w-2xl text-base leading-8 text-gray-400">
+       I'm open to opportunities involving software development,
+       AI engineering, intelligent systems, automation and product development.
+       I'd love to connect with people building practical technology.
+     </p>
+     <div class="mt-9 flex flex-wrap gap-3">
+       <a href="mailto:your.email@example.com" class="rounded-full bg-white px-6 py-3 text-sm font-medium text-gray-900 hover:bg-gray-200">
+         Email me →
+       </a>
+       <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" class="rounded-full border border-white/20 px-6 py-3 text-sm font-medium hover:bg-white/10">
+         LinkedIn ↗
+       </a>
+     </div>
+   </div>
+ </section>
+ </main>
+ <footer class="border-t border-white/10 bg-gray-950 text-gray-500">
+   <div class="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-7 text-xs sm:flex-row sm:justify-between sm:px-6">
+     <p>Software, systems and intelligent products.</p>
+     <p>© <span id="year"></span></p>
+   </div>
+ </footer>
+ 
 <script>
-// Mobile navigation
-const menuButton = document.getElementById('menuButton');
-const mobileMenu = document.getElementById('mobileMenu');
+(() => {
+  const $ = (s, root=document) => root.querySelector(s);
+  const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 
-menuButton.addEventListener('click', () => {
-  mobileMenu.classList.toggle('hidden');
-});
+  // Mobile navigation
+  const menuButton = $('#menuButton');
+  const mobileMenu = $('#mobileMenu');
+  if (menuButton && mobileMenu) {
+    menuButton.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden', open);
+      menuButton.setAttribute('aria-expanded', String(!open));
+    });
+    $$('a', mobileMenu).forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+  }
 
-mobileMenu.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.add('hidden');
-  });
-});
+  // Scroll progress
+  const progress = $('#scrollProgress');
+  const updateProgress = () => {
+    if (!progress) return;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+  };
+  window.addEventListener('scroll', updateProgress, {passive:true});
+  updateProgress();
 
-// Scroll-based active navigation
-const sections = document.querySelectorAll('main section[id]');
-const links = document.querySelectorAll('.nav-link');
-
-const navigationObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      links.forEach(link => {
-        link.classList.toggle(
-          'active',
-          link.getAttribute('href') === '#' + entry.target.id
-        );
+  // Active section navigation
+  const sections = $$('main section[id]');
+  const links = $$('.nav-link');
+  if ('IntersectionObserver' in window) {
+    const navigationObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        links.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
       });
-    }
+    }, {rootMargin:'-20% 0px -65% 0px'});
+    sections.forEach(section => navigationObserver.observe(section));
+  }
+
+  // Reveal animations — with a fallback so a failed observer never leaves the site blank.
+  const reveals = $$('.reveal');
+  const showAll = () => reveals.forEach(el => el.classList.add('visible'));
+  if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.06});
+    reveals.forEach(el => revealObserver.observe(el));
+    setTimeout(showAll, 1800);
+  } else {
+    showAll();
+  }
+
+  // Cursor glow
+  window.addEventListener('pointermove', e => {
+    document.documentElement.style.setProperty('--mx', `${e.clientX}px`);
+    document.documentElement.style.setProperty('--my', `${e.clientY}px`);
+  }, {passive:true});
+
+  // Mouse-following card tilt
+  const card = $('#systemCard');
+  if (card && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      const x = (e.clientX-r.left)/r.width-.5;
+      const y = (e.clientY-r.top)/r.height-.5;
+      card.style.transform = `rotateX(${-y*7}deg) rotateY(${x*9}deg) translateY(-6px)`;
+    });
+    card.addEventListener('pointerleave', () => card.style.transform = '');
+  }
+
+  // Interactive project spotlight
+  $$('.project-card').forEach(card => {
+    card.addEventListener('pointermove', e => {
+      const r=card.getBoundingClientRect();
+      card.style.setProperty('--card-x', `${e.clientX-r.left}px`);
+      card.style.setProperty('--card-y', `${e.clientY-r.top}px`);
+    });
   });
-}, {
-  rootMargin: '-20% 0px -65% 0px'
-});
 
-sections.forEach(section => navigationObserver.observe(section));
-
-// Reveal animations
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08 });
-
-document.querySelectorAll('.reveal').forEach(element => {
-  revealObserver.observe(element);
-});
-
-// Current year
-document.getElementById('year').textContent = new Date().getFullYear();
+  const year = $('#year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
 </script>
 
-</body>
-</html>
+ </body>
+ </html>
