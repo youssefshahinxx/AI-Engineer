@@ -232,8 +232,17 @@ body::after{
    <div class="hero-grid mx-auto grid max-w-6xl gap-10 px-5 pb-24 pt-24 sm:px-6 sm:pb-32 sm:pt-24 lg:grid-cols-[1.08fr_.92fr] lg:items-center">
      <div class="reveal max-w-4xl">
        <h1 class="text-5xl font-semibold leading-[1.04] tracking-[-.045em] sm:text-6xl md:text-7xl">
-         Building software,<br>
-         <span class="gradient-text">intelligent systems</span><br>
+         Building software,
+         <!-- Hidden word with arrow container, arrow hidden on small screens -->
+         <span class="my-4 flex flex-wrap items-center gap-3">
+           <span class="hidden items-center gap-2 text-gray-400 lg:inline-flex text-xl select-none" aria-hidden="true">
+             <span>→</span>
+           </span>
+           <span class="group relative inline-block rounded-lg bg-gray-100 px-3 py-1 transition-colors hover:bg-gray-200">
+             <span class="select-none text-transparent transition-colors group-hover:text-gray-900">intelligent systems</span>
+             <span class="absolute inset-0 flex items-center justify-center text-xs font-medium text-gray-500 group-hover:opacity-0">Highlight to discover</span>
+           </span>
+         </span>
          and meaningful products.
        </h1>
        <p class="mt-8 max-w-2xl text-base leading-8 text-gray-600 sm:text-lg">
@@ -328,9 +337,12 @@ body::after{
            page structures and user experiences connected to backend services.
          </p>
          <div class="mt-6 flex flex-wrap gap-2">
-           <span class="badge">HTML</span><span class="badge">CSS</span>
-           <span class="badge">JavaScript/TypeScript</span><span class="badge">SvelteKit</span>
-           <span class="badge">Tailwind CSS</span>
+            <span class="badge">Frontend Development</span>
+            <span class="badge">Web Development</span>
+            <span class="badge">UI/UX (User Interface / User Experience)</span>
+            <span class="badge">Responsive Design</span>
+            <span class="badge">Component-Based Architecture</span>
+            <span class="badge">Client-Server Integration</span>
          </div>
        </article>
        <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
@@ -341,9 +353,12 @@ body::after{
            operations, authentication flows and integrations between systems.
          </p>
          <div class="mt-6 flex flex-wrap gap-2">
-           <span class="badge">Node.js</span><span class="badge">Express</span>
-           <span class="badge">REST APIs</span><span class="badge">JavaScript</span>
-           <span class="badge">Authentication/Authorization</span>
+            <span class="badge">Backend Engineering</span>
+            <span class="badge">Server-Side Development</span>
+            <span class="badge">API Design & REST Endpoints</span>
+            <span class="badge">Application Logic</span>
+            <span class="badge">Authentication & Authorization</span>
+            <span class="badge">System Integration</span>
          </div>
        </article>
        <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
@@ -354,9 +369,13 @@ body::after{
            database functions, constraints, business logic and data consistency.
          </p>
          <div class="mt-6 flex flex-wrap gap-2">
-           <span class="badge">PostgreSQL</span><span class="badge">MySQL</span>
-           <span class="badge">Supabase</span><span class="badge">SQL</span>
-           <span class="badge">Database Functions</span>
+           <span class="badge">Database Systems</span>
+            <span class="badge">Data Management</span>
+            <span class="badge">Relational Data</span>
+            <span class="badge">Schema Design</span>
+            <span class="badge">Querying & Functions</span>
+            <span class="badge">Data Integrity & Consistency</span>
+            <span class="badge">Business Logic</span>
          </div>
        </article>
        <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
@@ -367,9 +386,12 @@ body::after{
            data exchange, authentication, payment services and webhooks.
          </p>
          <div class="mt-6 flex flex-wrap gap-2">
-           <span class="badge">REST</span><span class="badge">Webhooks</span>
-           <span class="badge">JSON</span><span class="badge">Paymob</span>
-           <span class="badge">Third-party APIs</span>
+           <span class="badge">API Integration</span>
+            <span class="badge">External Services & Interoperability</span>
+            <span class="badge">Data Exchange</span>
+            <span class="badge">Authentication & Authorization</span>
+            <span class="badge">Payment Gateways & Services</span>
+            <span class="badge">Webhooks & Event Handling</span>
          </div>
        </article>
        <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
@@ -380,9 +402,13 @@ body::after{
            conversational systems, voice pipelines and AI-powered tools.
          </p>
          <div class="mt-6 flex flex-wrap gap-2">
-           <span class="badge">LLMs</span><span class="badge">AI Agents</span>
-           <span class="badge">LiveKit</span><span class="badge">Deepgram</span>
-           <span class="badge">Python</span>
+           <span class="badge">AI Engineering</span>
+            <span class="badge">Intelligent Systems</span>
+            <span class="badge">LLM Applications</span>
+            <span class="badge">Agent Architecture</span>
+            <span class="badge">Conversational Systems</span>
+            <span class="badge">Voice Pipelines</span>
+            <span class="badge">AI-Powered Tooling</span>
          </div>
        </article>
        <article class="project-card rounded-2xl border border-gray-200 bg-white p-7">
@@ -393,8 +419,13 @@ body::after{
            data processing, AI decisions, business rules and human handoffs.
          </p>
          <div class="mt-6 flex flex-wrap gap-2">
-           <span class="badge">n8n</span><span class="badge">APIs</span>
-           <span class="badge">Webhooks</span><span class="badge">AI Workflows</span>
+           <span class="badge">Workflow Automation</span>
+            <span class="badge">Business Process Design & Rules</span>
+            <span class="badge">Event-Driven Triggers</span>
+            <span class="badge">Data Processing & Transformation</span>
+            <span class="badge">AI Decision-Making</span>
+            <span class="badge">Human-in-the-Loop Handoffs</span>
+            <span class="badge">System Integration</span>
          </div>
        </article>
      </div>
@@ -539,12 +570,12 @@ body::after{
              <div class="text-center text-gray-400">↓</div>
              <div class="rounded-xl border border-indigo-200 bg-indigo-50 p-4">
                <p class="font-semibold text-sm">LLM Processing</p>
-               <p class="mt-1 text-xs text-gray-500">GPT-4o-mini and conversational business logic</p>
+               <p class="mt-1 text-xs text-gray-500">GPT-4 and conversational business logic</p>
              </div>
              <div class="text-center text-gray-400">↓</div>
              <div class="rounded-xl border border-gray-200 bg-white p-4">
                <p class="font-semibold text-sm">Text-to-Speech</p>
-               <p class="mt-1 text-xs text-gray-500">Egyptian Arabic EGTTS exploration</p>
+               <p class="mt-1 text-xs text-gray-500">Egyptian Arabic TTS</p>
              </div>
              <div class="text-center text-gray-400">↓</div>
              <div class="rounded-xl border border-gray-200 bg-white p-4">
@@ -565,90 +596,87 @@ body::after{
        </div>
      </article>
      <!-- AURA -->
-     <article class="reveal project-card mt-7 overflow-hidden rounded-3xl border border-gray-200">
-       <div class="p-7 sm:p-10">
-         <div class="flex flex-wrap gap-2">
-           <span class="badge">Product Strategy</span>
-           <span class="badge">Marketplace</span>
-           <span class="badge">Concept & Specification</span>
-         </div>
-         <h3 class="mt-7 text-3xl font-semibold tracking-tight">Aura</h3>
-         <p class="mt-2 text-sm font-medium text-gray-500">Local Discovery, Commerce & Loyalty Platform</p>
-         <div class="mt-8 grid gap-10 lg:grid-cols-[1fr\_.8fr]">
-           <div>
-             <p class="text-sm leading-7 text-gray-600">
-               Aura is a marketplace concept I have been developing
-               around a simple idea: helping people discover businesses,
-               offers and activities worth engaging with, and making it
-               easier to move from discovery to an actual transaction.
-             </p>
-             <p class="mt-4 text-sm leading-7 text-gray-600">
-               The concept brings together local discovery, merchant
-               storefronts, offers, payments, cashback, loyalty, delivery
-               and AI employees into a connected ecosystem.
-             </p>
-             <h4 class="mt-8 text-sm font-semibold">Product architecture</h4>
-             <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
-               <div class="rounded-xl border border-gray-200 p-4">
-                 <p class="text-sm font-semibold">Discovery</p>
-                 <p class="mt-1 text-xs text-gray-500">Map & offers</p>
-               </div>
-               <div class="rounded-xl border border-gray-200 p-4">
-                 <p class="text-sm font-semibold">Storefront</p>
-                 <p class="mt-1 text-xs text-gray-500">Merchant presence</p>
-               </div>
-               <div class="rounded-xl border border-gray-200 p-4">
-                 <p class="text-sm font-semibold">Commerce</p>
-                 <p class="mt-1 text-xs text-gray-500">Transactions</p>
-               </div>
-               <div class="rounded-xl border border-gray-200 p-4">
-                 <p class="text-sm font-semibold">Loyalty</p>
-                 <p class="mt-1 text-xs text-gray-500">Cashback & rewards</p>
-               </div>
-               <div class="rounded-xl border border-gray-200 p-4">
-                 <p class="text-sm font-semibold">Delivery</p>
-                 <p class="mt-1 text-xs text-gray-500">Order fulfillment</p>
-               </div>
-               <div class="rounded-xl border border-gray-200 p-4">
-                 <p class="text-sm font-semibold">AI Employee</p>
-                 <p class="mt-1 text-xs text-gray-500">Business assistance</p>
-               </div>
-             </div>
-           </div>
-           <div>
-             <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Product & business practices</h4>
-             <div class="mt-5 space-y-5">
-               <div>
-                 <p class="text-sm font-semibold">Business model design</p>
-                 <p class="mt-1 text-sm leading-6 text-gray-600">Merchant subscriptions, transaction commissions, advertising and AI services.</p>
-               </div>
-               <div>
-                 <p class="text-sm font-semibold">Unit economics</p>
-                 <p class="mt-1 text-sm leading-6 text-gray-600">Revenue assumptions, fee structures, cashback economics and platform margins.</p>
-               </div>
-               <div>
-                 <p class="text-sm font-semibold">Financial logic</p>
-                 <p class="mt-1 text-sm leading-6 text-gray-600">Immutable cashback ledger concepts, transaction accounting and delivery-fee allocation.</p>
-               </div>
-               <div>
-                 <p class="text-sm font-semibold">Product validation</p>
-                 <p class="mt-1 text-sm leading-6 text-gray-600">Customer discovery, merchant validation, transaction testing and economic feasibility.</p>
-               </div>
-               <div>
-                 <p class="text-sm font-semibold">Product specification</p>
-                 <p class="mt-1 text-sm leading-6 text-gray-600">Roles, permissions, business rules, customer journeys and phased product development.</p>
-               </div>
-             </div>
-             <div class="mt-7 rounded-xl border border-amber-200 bg-amber-50 p-4">
-               <p class="text-sm font-semibold text-amber-900">Project status</p>
-               <p class="mt-1 text-xs leading-6 text-amber-800">
-                 Product strategy and detailed specifications. Not presented as a launched or production-built platform.
-               </p>
-             </div>
-           </div>
-         </div>
-       </div>
-     </article>
+      <article class="reveal project-card mt-7 overflow-hidden rounded-3xl border border-gray-200">
+        <div class="p-7 sm:p-10">
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Product Strategy</span>
+            <span class="badge">Marketplace</span>
+            <span class="badge">Concept & Specification</span>
+          </div>
+          <h3 class="mt-7 text-3xl font-semibold tracking-tight">Aura</h3>
+          <p class="mt-2 text-sm font-medium text-gray-500">Commerce & Discovery Ecosystem</p>
+          <div class="mt-8 grid gap-10 lg:grid-cols-[1fr\_.8fr]">
+            <div>
+              <p class="text-sm leading-7 text-gray-600">
+                A conceptual marketplace framework designed to connect local discovery 
+                with streamlined user engagement and transactional workflows.
+              </p>
+              <p class="mt-4 text-sm leading-7 text-gray-600">
+                The architecture explores modular storefronts, flexible offers, transaction ledgers, 
+                and automated operational assistants within a unified platform model.
+              </p>
+              <h4 class="mt-8 text-sm font-semibold">Product architecture</h4>
+              <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                <div class="rounded-xl border border-gray-200 p-4">
+                  <p class="text-sm font-semibold">Discovery</p>
+                  <p class="mt-1 text-xs text-gray-500">Mapping & feeds</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-4">
+                  <p class="text-sm font-semibold">Storefront</p>
+                  <p class="mt-1 text-xs text-gray-500">Merchant presence</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-4">
+                  <p class="text-sm font-semibold">Commerce</p>
+                  <p class="mt-1 text-xs text-gray-500">Transactions</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-4">
+                  <p class="text-sm font-semibold">Loyalty</p>
+                  <p class="mt-1 text-xs text-gray-500">Rewards & retention</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-4">
+                  <p class="text-sm font-semibold">Operations</p>
+                  <p class="mt-1 text-xs text-gray-500">Fulfillment flows</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-4">
+                  <p class="text-sm font-semibold">Automation</p>
+                  <p class="mt-1 text-xs text-gray-500">System assistance</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h4 class="text-xs font-semibold uppercase tracking-widest text-gray-400">Product & business practices</h4>
+              <div class="mt-5 space-y-5">
+                <div>
+                  <p class="text-sm font-semibold">Ecosystem design</p>
+                  <p class="mt-1 text-sm leading-6 text-gray-600">Multi-tier participation models, structural monetization frameworks, and value exchange flows.</p>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Economic modeling</p>
+                  <p class="mt-1 text-sm leading-6 text-gray-600">High-level growth assumptions, incentive distribution, and platform sustainability metrics.</p>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">System logic</p>
+                  <p class="mt-1 text-sm leading-6 text-gray-600">Ledger structures, transaction accounting concepts, and automated allocation rules.</p>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Validation framework</p>
+                  <p class="mt-1 text-sm leading-6 text-gray-600">User journey mapping, workflow testing, and conceptual feasibility checks.</p>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold">Specification design</p>
+                  <p class="mt-1 text-sm leading-6 text-gray-600">Access controls, business rule definitions, and phased development roadmapping.</p>
+                </div>
+              </div>
+              <div class="mt-7 rounded-xl border border-amber-200 bg-amber-50 p-4">
+                <p class="text-sm font-semibold text-amber-900">Project status</p>
+                <p class="mt-1 text-xs leading-6 text-amber-800">
+                  Maintained privately as a strategic product concept and architectural blueprint.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
    </div>
  </section>
  <!-- ENGINEERING PRACTICES -->
@@ -811,8 +839,7 @@ body::after{
        <div class="rounded-2xl border border-gray-200 bg-white p-6">
          <h3 class="font-semibold">Programming</h3>
          <div class="mt-5 flex flex-wrap gap-2">
-           <span class="badge">JavaScript</span>
-           <span class="badge">TypeScript</span>
+           <span class="badge">JavaScript/TypeScript</span>
            <span class="badge">Python</span>
            <span class="badge">HTML</span>
            <span class="badge">CSS/Tailwind CSS</span>
